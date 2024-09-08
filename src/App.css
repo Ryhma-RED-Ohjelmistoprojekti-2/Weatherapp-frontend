@@ -16,7 +16,7 @@ header h1 {
   padding: 25px;
 }
 
-.weather-page {
+main {
   display: grid;
   justify-content: center;
   grid-template-columns: 450px 450px 450px;

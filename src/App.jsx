@@ -1,8 +1,21 @@
 import "./App.css";
-import WeatherLayout from "./components/WeatherLayout";
+import CurrentWeatherCard from "./components/CurrentWeatherCard";
+import HistoryCard from "./components/HistoryCard";
+import ForecastCard from "./components/ForecastCard";
 
 function App() {
-  return <WeatherLayout />
+  return (
+    <>
+      <header>
+        <h1>Weather App</h1>
+      </header>
+      <main>
+        <CurrentWeatherCard />
+        <HistoryCard />
+        <ForecastCard />
+      </main>
+    </>
+  )
 }
 
 export default App;
