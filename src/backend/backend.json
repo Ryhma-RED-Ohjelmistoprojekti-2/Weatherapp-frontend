@@ -23,8 +23,8 @@
             "rainfallTentyFourHour": 95     
         },
         {
-            "id": 1,
-            "temperature": 43,
+            "id": 2,
+            "temperature": 55,
             "humidity": 60,
             "barometricPressure": 20,
             "windDirection": 40,

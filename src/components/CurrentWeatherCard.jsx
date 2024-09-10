@@ -43,12 +43,12 @@ const CurrentWeatherCard = () => {
             <div className="weathercard-content">
                 {
                 loading ? 
-                <p>Loading</p> :
+                <p>Loading data...</p> :
                     <article className="weathercard-content-info">
                         <p>Weather measured 12.9.2023</p>
                         <p>Temperature: {currentWeather.temperature}°, 
                             Humidity: {currentWeather.humidity}%</p>
-                        <p>Wind Direction {currentWeather.windDirection}°</p>
+                        <p>Wind Direction: {currentWeather.windDirection}°</p>
                     </article>
                 }
                 <METARCard/>
