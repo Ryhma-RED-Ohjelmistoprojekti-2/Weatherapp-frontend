@@ -12,7 +12,7 @@ const CurrentWeatherCard = () => {
         avgWindSpeed: 0,
         maxWindSpeed: 0,
         rainfallOneHour: 0,
-        rainfallTentyFourHour: 0
+        rainfallTwentyFourHour: 0
     });
     const [loading, setLoading] = useState(null);
 
@@ -32,7 +32,7 @@ const CurrentWeatherCard = () => {
             fetchCurrentWeather();
         }, 30000)
 
-        return () => clearInterval(weatherIntervalId);        
+        return () => clearInterval(weatherIntervalId);
     }, [])
 
     return (
@@ -42,16 +42,16 @@ const CurrentWeatherCard = () => {
             </div>
             <div className="weathercard-content">
                 {
-                loading ? 
-                <p>Loading data...</p> :
-                    <article className="weathercard-content-info">
-                        <p>Weather measured 12.9.2023</p>
-                        <p>Temperature: {currentWeather.temperature}°, 
-                            Humidity: {currentWeather.humidity}%</p>
-                        <p>Wind Direction: {currentWeather.windDirection}°</p>
-                    </article>
+                    loading ?
+                        <p>Loading data...</p> :
+                        <article className="weathercard-content-info">
+                            <p>Weather measured 12.9.2023</p>
+                            <p>Temperature: {currentWeather.temperature}°,
+                                Humidity: {currentWeather.humidity}%</p>
+                            <p>Wind Direction: {currentWeather.windDirection}°</p>
+                        </article>
                 }
-                <METARCard/>
+                <METARCard />
             </div>
         </section>
     )

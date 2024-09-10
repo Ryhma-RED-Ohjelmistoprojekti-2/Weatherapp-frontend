@@ -9,7 +9,7 @@
             "avgWindSpeed": 40,
             "maxWindSpeed": 60,
             "rainfallOneHour": 80,
-            "rainfallTentyFourHour": 85
+            "rainfallTwentyFourHour": 85
         },
         {
             "id": 1,
@@ -20,7 +20,7 @@
             "avgWindSpeed": 50,
             "maxWindSpeed": 70,
             "rainfallOneHour": 90,
-            "rainfallTentyFourHour": 95     
+            "rainfallTwentyFourHour": 95
         },
         {
             "id": 2,
@@ -31,7 +31,7 @@
             "avgWindSpeed": 50,
             "maxWindSpeed": 70,
             "rainfallOneHour": 90,
-            "rainfallTentyFourHour": 95     
+            "rainfallTwentyFourHour": 95
         }
     ]
 }
