@@ -1,0 +1,37 @@
+{
+    "Weathers": [
+        {
+            "id": 0,
+            "temperature": 20,
+            "humidity": 50,
+            "barometricPressure": 10,
+            "windDirection": 30,
+            "avgWindSpeed": 40,
+            "maxWindSpeed": 60,
+            "rainfallOneHour": 80,
+            "rainfallTentyFourHour": 85
+        },
+        {
+            "id": 1,
+            "temperature": 30,
+            "humidity": 60,
+            "barometricPressure": 20,
+            "windDirection": 40,
+            "avgWindSpeed": 50,
+            "maxWindSpeed": 70,
+            "rainfallOneHour": 90,
+            "rainfallTentyFourHour": 95     
+        },
+        {
+            "id": 1,
+            "temperature": 43,
+            "humidity": 60,
+            "barometricPressure": 20,
+            "windDirection": 40,
+            "avgWindSpeed": 50,
+            "maxWindSpeed": 70,
+            "rainfallOneHour": 90,
+            "rainfallTentyFourHour": 95     
+        }
+    ]
+}

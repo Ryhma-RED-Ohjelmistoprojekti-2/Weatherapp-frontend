@@ -1,0 +1,47 @@
+/* shared styles for card components */
+
+.weathercard {
+    width: 360px;
+    height: 800px;
+    background-color: whitesmoke;
+    margin-bottom: 25px;
+}
+
+.weathercard {
+    border-radius: 5px;
+}
+
+.weathercard-header, .metarcard-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.weathercard-header h2, .metarcard-header h3 {
+    color: white;
+}
+
+.weathercard-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.weathercard-content-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metarcard {
+    width: 320px;
+    height: 270px;
+    background-color: gray;
+    border-radius: 5px;
+    color: whitesmoke;
+}

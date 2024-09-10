@@ -1,6 +1,11 @@
 const ForecastCard = () => {
+
     return (
-        <div className="weather-card"></div>
+        <section className="weathercard">
+            <div className="weathercard-header">
+                <h2>Forecast</h2>
+            </div>
+        </section>
     )
 }
 

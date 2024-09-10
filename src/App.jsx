@@ -1,4 +1,5 @@
 import "./App.css";
+import "./css/weathercard.css"
 import CurrentWeatherCard from "./components/CurrentWeatherCard";
 import HistoryCard from "./components/HistoryCard";
 import ForecastCard from "./components/ForecastCard";

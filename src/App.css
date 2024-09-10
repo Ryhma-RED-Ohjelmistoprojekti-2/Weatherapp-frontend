@@ -1,4 +1,4 @@
-/* shared styles between components */
+/* styles for general layout */
 
 body {
   background-color: gray;
@@ -14,23 +14,12 @@ header {
 header h1 {
   background-color: whitesmoke;
   padding: 25px;
+  border-radius: 5px;
 }
 
 main {
   display: grid;
   justify-content: center;
-  grid-template-columns: 450px 450px 450px;
+  grid-template-columns: 360px 360px 360px;
   column-gap: 30px;
-}
-
-.weather-card {
-  display: flex;
-  justify-content: center;
-  width: 450px;
-  height: 900px;
-  background-color: whitesmoke;
-}
-
-.weather-card, header h1 {
-  border-radius: 5px;
 }
