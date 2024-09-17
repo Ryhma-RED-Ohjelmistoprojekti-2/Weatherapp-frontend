@@ -1,4 +1,3 @@
-//todo: add rest api endpoint url here for importing to other components
-
-//this is a placeholder url for json-server test data
+//url for locally running backend
+//todo: switch this to use the correct url when backend is deployed
 export const dbUrl = "http://localhost:8080"

@@ -20,12 +20,16 @@ const CurrentWeatherCard = () => {
 
     useEffect(() => {
         const fetchCurrentWeather = async () => {
-            setLoading(true);
-            const response = await fetch(dbUrl + "/api/weathers");
-            if (!response.ok) throw new Error("Issue fetching weather data!");
-            const weatherData = await response.json();
-            setCurrentWeather(weatherData[weatherData.length - 1]);
-            setLoading(false);
+            try {
+                setLoading(true);
+                const response = await fetch(dbUrl + "/api/weathers");
+                if (!response.ok) throw new Error("Issue fetching weather data!");
+                const weatherData = await response.json();
+                setCurrentWeather(weatherData[weatherData.length - 1]);
+                setLoading(false);
+            } catch (error) {
+                console.error(error);
+            }
         }
 
         fetchCurrentWeather();
@@ -47,9 +51,9 @@ const CurrentWeatherCard = () => {
                     loading ?
                         <p>Loading data...</p> :
                         <article className="weathercard-content-info">
-                            <p>Weather measured {currentWeather.time.substring(0, 2)}.
-                                {currentWeather.time.substring(2, 4)} {currentWeather.date.substring(6, currentWeather.date.length)}.
-                                {currentWeather.date.substring(5, 6)}
+                            <p>Weather measured {currentWeather.time.slice(0, 2)}.
+                                {currentWeather.time.slice(2, 4)} {currentWeather.date.slice(6, currentWeather.date.length)}.
+                                {currentWeather.date.slice(5, 6)}
                             </p>
                             <p>Temperature: {currentWeather.temperature}°,
                                 Humidity: {currentWeather.humidity}%</p>
