@@ -47,7 +47,10 @@ const CurrentWeatherCard = () => {
                     loading ?
                         <p>Loading data...</p> :
                         <article className="weathercard-content-info">
-                            <p>Weather measured 12.9.2023</p>
+                            <p>Weather measured {currentWeather.time.substring(0, 2)}.
+                                {currentWeather.time.substring(2, 4)} {currentWeather.date.substring(6, currentWeather.date.length)}.
+                                {currentWeather.date.substring(5, 6)}
+                            </p>
                             <p>Temperature: {currentWeather.temperature}°,
                                 Humidity: {currentWeather.humidity}%</p>
                             <p>Wind Direction: {currentWeather.windDirection}°</p>
