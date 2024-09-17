@@ -12,14 +12,16 @@ const CurrentWeatherCard = () => {
         avgWindSpeed: 0,
         maxWindSpeed: 0,
         rainfallOneHour: 0,
-        rainfallTwentyFourHour: 0
+        rainfallTwentyFourHour: 0,
+        time: "",
+        date: ""
     });
     const [loading, setLoading] = useState(null);
 
     useEffect(() => {
         const fetchCurrentWeather = async () => {
             setLoading(true);
-            const response = await fetch(dbUrl);
+            const response = await fetch(dbUrl + "/api/weathers");
             if (!response.ok) throw new Error("Issue fetching weather data!");
             const weatherData = await response.json();
             setCurrentWeather(weatherData[weatherData.length - 1]);
