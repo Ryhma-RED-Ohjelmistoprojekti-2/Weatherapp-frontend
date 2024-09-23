@@ -26,7 +26,6 @@
 }
 
 .weathercard-content,
-.metarcard-content,
 .weathercard-content-info {
     display: flex;
     align-items: center;
@@ -39,4 +38,8 @@
     background-color: gray;
     border-radius: 5px;
     color: whitesmoke;
+}
+
+.metarcard-content {
+    text-align: center;
 }
