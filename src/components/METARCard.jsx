@@ -4,6 +4,7 @@ const METARCard = () => {
 
     const [metars, setMetars] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchMetarData = async () => {
@@ -25,7 +26,8 @@ const METARCard = () => {
                 setMetars(metarArray);
                 setLoading(false);
             } catch (error) {
-                console.error(error);
+                setError(error.message);
+                setLoading(false);
             }
         }
 
@@ -41,6 +43,8 @@ const METARCard = () => {
                 {
                     loading ? (
                         <p>Loading METAR data...</p>
+                    ) : error ? (
+                        <p style={{ color: 'red' }}>Error: {error}</p>
                     ) : (
                         <>
                             {metars.map((metar, index) => <p key={index}>{metar}</p>)}
