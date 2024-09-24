@@ -11,9 +11,9 @@ function App() {
         <h1>Weather App</h1>
       </header>
       <main>
-        <CurrentWeatherCard />
-        <HistoryCard />
-        <ForecastCard />
+        <CurrentWeatherCard/>
+        <HistoryCard/>
+        <ForecastCard/>
       </main>
     </>
   )
