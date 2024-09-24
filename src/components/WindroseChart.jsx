@@ -14,12 +14,12 @@ const windData = {
 
 const WindroseChart = ({ weatherData }) => {
     return (
-        <div style={{ width: "100%", maxWidth: "400px", height: "400px", margin: "2px auto", display: "flex", justifyContent: "center", alignItems: "center", transform: "scale(0.6)" }}>
+        <div style={{transform: "scale(0.85)"}}>
             <Chart
                 chartData={windData.chartData}
                 columns={windData.columns}
-                responsive
-                legendGap={20}
+                height={450}
+                width={450}
             />
         </div>
     )
