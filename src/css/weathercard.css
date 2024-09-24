@@ -1,8 +1,8 @@
 /* shared styles for card components */
 
 .weathercard {
-    width: 360px;
-    height: 800px;
+    width: 415px;
+    height: 850px;
     background-color: whitesmoke;
     margin-bottom: 25px;
     border-radius: 5px;

@@ -20,6 +20,6 @@ header h1 {
 main {
   display: grid;
   justify-content: center;
-  grid-template-columns: 360px 360px 360px;
+  grid-template-columns: 415px 415px 415px;
   column-gap: 30px;
 }
