@@ -1,3 +1,4 @@
+import AirportCard from "./AirportCard";
 import METARCard from "./METARCard";
 
 const CurrentWeatherCard = ({ currentWeather, loading, error }) => {
@@ -22,6 +23,7 @@ const CurrentWeatherCard = ({ currentWeather, loading, error }) => {
                         </article>
                     )
                 }
+                <AirportCard/>
                 <METARCard />
             </div>
         </section>

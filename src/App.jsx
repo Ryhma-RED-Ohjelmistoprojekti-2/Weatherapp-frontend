@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { dbUrl } from "./constants/constants";
 import "./App.css";
-import "./css/weathercard.css"
+import "./css/cards.css"
 import CurrentWeatherCard from "./components/CurrentWeatherCard";
 import HistoryCard from "./components/HistoryCard";
 import ForecastCard from "./components/ForecastCard";

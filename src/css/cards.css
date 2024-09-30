@@ -9,7 +9,8 @@
 }
 
 .weathercard-header,
-.metarcard-header {
+.metarcard-header,
+.airportcard-header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +22,8 @@
 }
 
 .weathercard-header h2,
-.metarcard-header h3 {
+.metarcard-header h3,
+.airportcard-header h3 {
     color: white;
 }
 
@@ -32,14 +34,18 @@
     flex-direction: column;
 }
 
-.metarcard {
+.metarcard,
+.airportcard {
     width: 320px;
     height: 270px;
     background-color: gray;
     border-radius: 5px;
     color: whitesmoke;
+    margin-top: 20px;
 }
 
-.metarcard-content {
+.metarcard-content,
+.airportcard-content {
     text-align: center;
+    padding: 5px;
 }
