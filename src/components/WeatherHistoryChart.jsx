@@ -1,4 +1,3 @@
-import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const data = [
@@ -39,9 +38,9 @@ const data = [
     },
 ];
 
-export default function WeatherHistoryChart() {
+export default function WeatherHistoryChart({ weatherData }) {
     return (
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="100%" height={300} style={{marginTop: "15px"}}>
             <LineChart data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 {/* X-akseli ajalle */}
