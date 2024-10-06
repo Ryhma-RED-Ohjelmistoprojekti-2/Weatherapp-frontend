@@ -19,8 +19,15 @@ class ErrorBoundary extends Component {
     render() {
         if (this.state.hasError) {
             return (
-            <div>
-                <h2>Something went wrong.</h2>
+            <div style={{
+                display: 'flex',
+                flexDirection: 'column', 
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100vh',
+                textAlign: 'center'
+            }}>
+                <h2>Something went wrong😞</h2>
                 {/* TODO: Yksityiskohdat pois? */}
                 <details style={{ whiteSpace: 'pre-wrap' }}>
                 {this.state.error && this.state.error.toString()}
