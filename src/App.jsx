@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { dbUrl } from "./constants/constants";
 import "./App.css";
 import "./css/cards.css"
-import CurrentWeatherCard from "./components/CurrentWeatherCard";
-import HistoryCard from "./components/HistoryCard";
-import ForecastCard from "./components/ForecastCard";
+import CurrentWeatherCard from "./components/main-cards/CurrentWeatherCard";
+import HistoryCard from "./components/main-cards/HistoryCard";
+import ForecastCard from "./components/main-cards/ForecastCard";
 
 function App() {
 

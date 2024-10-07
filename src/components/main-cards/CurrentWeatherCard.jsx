@@ -1,5 +1,5 @@
-import AirportCard from "./AirportCard";
-import METARCard from "./METARCard";
+import AirportCard from "../sub-cards/AirportCard";
+import METARCard from "../sub-cards/METARCard";
 
 const CurrentWeatherCard = ({ currentWeather, loading, error }) => {
 

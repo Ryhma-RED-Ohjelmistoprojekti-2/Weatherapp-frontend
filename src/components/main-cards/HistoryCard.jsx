@@ -1,5 +1,5 @@
-import WeatherHistoryChart from "./WeatherHistoryChart"
-import WindroseChart from "./WindroseChart"
+import WeatherHistoryChart from "../charts/WeatherHistoryChart"
+import WindroseChart from "../charts/WindroseChart"
 
 const HistoryCard = ({ weatherData, loading, error }) => {
     return (
