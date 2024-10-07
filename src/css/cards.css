@@ -14,7 +14,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
     width: 100%;
     background-color: black;
 }
@@ -23,6 +22,11 @@
 .metarcard-header {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    height: 50px;
+}
+
+.airportcard-header {
+    height: 45px;
 }
 
 .weathercard-header h2,
@@ -54,7 +58,8 @@
     color: whitesmoke;
 }
 
-.airportcard, .metarcard {
+.airportcard,
+.metarcard {
     margin-top: 20px;
 }
 
