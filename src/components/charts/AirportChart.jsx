@@ -75,6 +75,15 @@ const AirportChart = ({ currentWeather }) => {
                     })
                 }
 
+                <Text
+                    x={centeredXCoordinate - 35}
+                    y={centeredYCoordinate - 20}
+                    text={`${currentWeather.windDirection}°`}
+                    fontSize={40}
+                    fontStyle='bold'
+                    fill="black"
+                />
+
                 <Arrow
                     points={[directionX1, directionY1, directionX2, directionY2]}
                     stroke="maroon"
