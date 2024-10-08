@@ -23,7 +23,7 @@ const CurrentWeatherCard = ({ currentWeather, loading, error }) => {
                         </article>
                     )
                 }
-                <AirportCard/>
+                <AirportCard currentWeather={currentWeather} />
                 <METARCard />
             </div>
         </section>

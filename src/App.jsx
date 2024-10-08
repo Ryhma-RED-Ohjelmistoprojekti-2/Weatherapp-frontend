@@ -22,18 +22,20 @@ function App() {
     date: ""
   });
   const [weatherData, setWeatherData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
+        setError(null);
+        setLoading(true);
         const response = await fetch(dbUrl + "/api/weathers");
         if (!response.ok) throw new Error("Issue fetching weather data!");
         const responseData = await response.json();
         setCurrentWeather(responseData[responseData.length - 1]);
         setWeatherData(responseData);
-        setLoading(false);
+        setTimeout(() => setLoading(false), 3000);
       } catch (error) {
         setError(error.message);
         setLoading(false);
