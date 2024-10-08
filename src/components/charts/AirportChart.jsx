@@ -1,15 +1,26 @@
-import { Stage, Layer, Line, Text, Ring } from 'react-konva';
+import { Stage, Layer, Line, Text, Ring, Arrow } from 'react-konva';
 import React from 'react';
 
-const AirportChart = () => {
+const AirportChart = ({ currentWeather }) => {
 
-    const anglesString = "04/22,12/30"
-
-    const anglePairs = anglesString.split(",")
-
+    //this code defines the center of the coordinate grid
     const centeredXCoordinate = 155;
     const centeredYCoordinate = 105;
     const lineLength = 100;
+
+    //this code is for current wind direction arrow drawing
+    const directionRadianAngle = currentWeather.windDirection * (Math.PI / 180);
+
+    const directionX1 = centeredXCoordinate + 110 * Math.cos(directionRadianAngle);
+    const directionY1 = centeredYCoordinate - 110 * Math.sin(directionRadianAngle);
+
+    const directionX2 = centeredXCoordinate + 80 * Math.cos(directionRadianAngle);
+    const directionY2 = centeredYCoordinate - 80 * Math.sin(directionRadianAngle);
+
+    //the following code before return statement is for runway angles environment variable
+    const anglesString = import.meta.env.VITE_ANGLES;
+
+    const anglePairs = anglesString.split(",")
 
     return (
         <Stage width={310} height={210}>
@@ -22,7 +33,7 @@ const AirportChart = () => {
                     x={centeredXCoordinate}
                     y={centeredYCoordinate}
                 />
-                
+
                 {
                     anglePairs.map((pair, index) => {
                         const angles = pair.split("/");
@@ -63,6 +74,12 @@ const AirportChart = () => {
                         )
                     })
                 }
+
+                <Arrow
+                    points={[directionX1, directionY1, directionX2, directionY2]}
+                    stroke="maroon"
+                    strokeWidth={9}
+                />
             </Layer>
         </Stage>
     );

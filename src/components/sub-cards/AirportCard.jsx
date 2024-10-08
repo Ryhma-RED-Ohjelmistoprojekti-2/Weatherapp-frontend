@@ -1,6 +1,6 @@
 import AirportChart from "../charts/AirportChart"
 
-const AirportCard = () => {
+const AirportCard = ({ currentWeather }) => {
 
     return (
         <article className="airportcard">
@@ -8,7 +8,7 @@ const AirportCard = () => {
                 <h3>Airport</h3>
             </div>
             <div className="airportcard-content">
-                <AirportChart />
+                <AirportChart currentWeather={currentWeather} />
             </div>
         </article>
     )

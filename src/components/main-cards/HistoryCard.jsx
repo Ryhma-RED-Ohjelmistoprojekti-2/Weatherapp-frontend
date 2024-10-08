@@ -12,7 +12,7 @@ const HistoryCard = ({ weatherData, loading, error }) => {
                     loading ? (
                         <p>Loading data...</p>
                     ) : error ? (
-                        <p style={{ color: 'red' }}>Error: {error}</p>
+                        <p style={{ color: 'black' }}>Error: {error}</p>
                     ) : (
                         <>
                             <WeatherHistoryChart weatherData={weatherData} />
