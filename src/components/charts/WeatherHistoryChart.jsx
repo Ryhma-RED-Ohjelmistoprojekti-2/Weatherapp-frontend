@@ -1,46 +1,15 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const data = [
-    {
-        time: '11:00',
-        speed: 4,
-        direction: 65,
-    },
-    {
-        time: '11:01',
-        speed: 7,
-        direction: 125,
-    },
-    {
-        time: '11:02',
-        speed: 10,
-        direction: 180,
-    },
-    {
-        time: '11:03',
-        speed: 8,
-        direction: 150,
-    },
-    {
-        time: '11:04',
-        speed: 5,
-        direction: 225,
-    },
-    {
-        time: '11:05',
-        speed: 2,
-        direction: 190,
-    },
-    {
-        time: '11:06',
-        speed: 3,
-        direction: 180,
-    },
-];
-
 export default function WeatherHistoryChart({ weatherData }) {
+
+    const data = weatherData.slice(-7).map(({ time, avgWindSpeed, windDirection }) => ({
+        time: `${time.slice(0, 2)}:${time.slice(2, 4)}:${time.slice(4, 6)}`,
+        speed: avgWindSpeed,
+        direction: windDirection
+    }));
+
     return (
-        <ResponsiveContainer width="100%" height={300} style={{marginTop: "15px"}}>
+        <ResponsiveContainer width="100%" height={300} style={{ marginTop: "15px" }}>
             <LineChart data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 {/* X-akseli ajalle */}
