@@ -2,19 +2,19 @@ import DataTable from 'react-data-table-component';
 
 const columns = [
 	{
-		name: 'Kellonaika',
+		name: 'Time',
 		selector: row => row.time,
 	},
 	{
-		name: 'Lämpötila',
+		name: 'Temperature',
 		selector: row => row.temperature,
 	},
 	{
-		name: 'Kosteus',
+		name: 'Humidity',
 		selector: row => row.humidity,
 	},
 	{
-		name: 'Tuuli',
+		name: 'Wind',
 		selector: row => row.wind,
 	},
 ];
