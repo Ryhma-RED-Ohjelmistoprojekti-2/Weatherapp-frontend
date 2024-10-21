@@ -4,8 +4,15 @@
     width: 415px;
     height: 850px;
     background-color: whitesmoke;
+    margin: 0 auto;
     margin-bottom: 25px;
     border-radius: 5px;
+}
+
+@media (max-width: 401px) {
+    .weathercard {
+        width: 375px;
+    }
 }
 
 .weathercard-header,

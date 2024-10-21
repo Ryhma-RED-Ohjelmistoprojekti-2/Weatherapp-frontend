@@ -23,3 +23,9 @@ main {
   grid-template-columns: 415px 415px 415px;
   column-gap: 30px;
 }
+
+@media (max-width: 401px) {
+  main {
+    grid-template-columns: 400px;
+  }
+}
