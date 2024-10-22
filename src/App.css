@@ -24,8 +24,14 @@ main {
   column-gap: 30px;
 }
 
-@media (max-width: 401px) {
+@media (max-width: 760px) {
   main {
     grid-template-columns: 360px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1500px) {
+  main {
+    grid-template-columns: 360px 360px;
   }
 }

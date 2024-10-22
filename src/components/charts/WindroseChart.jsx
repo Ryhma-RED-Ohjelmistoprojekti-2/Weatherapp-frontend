@@ -18,7 +18,7 @@ const WindroseChart = ({ weatherData }) => {
     };
 
     return (
-        <div style={{transform: window.innerWidth <= 401 ? "scale(0.75)" : "scale(0.85)"}}>
+        <div style={{transform: window.innerWidth <= 1500 ? "scale(0.75)" : "scale(0.85)"}}>
             <Chart
                 chartData={windData.chartData}
                 columns={windData.columns}

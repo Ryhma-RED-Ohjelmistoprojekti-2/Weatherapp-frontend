@@ -9,7 +9,7 @@
     border-radius: 5px;
 }
 
-@media (max-width: 401px) {
+@media (max-width: 1500px) {
     .weathercard {
         width: 340px;
     }
