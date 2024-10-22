@@ -3,6 +3,9 @@ import METARCard from "../sub-cards/METARCard";
 
 const CurrentWeatherCard = ({ currentWeather, loading, error }) => {
 
+    const measurementTimeString = `${currentWeather.time.slice(0, 2)}.${currentWeather.time.slice(2, 4)}`;
+    const measurementDateString = `${currentWeather.date.slice(6, currentWeather.date.length)}.${currentWeather.date.slice(5, 6)}`;
+
     return (
         <section className="weathercard">
             <div className="weathercard-header">
@@ -16,9 +19,11 @@ const CurrentWeatherCard = ({ currentWeather, loading, error }) => {
                         <p style={{ color: 'black' }}>Error: {error}</p>
                     ) : (
                         <article className="weathercard-content-info">
-                            <p>Weather measured {currentWeather.time.slice(0, 2)}.{currentWeather.time.slice(2, 4)} {currentWeather.date.slice(6, currentWeather.date.length)}.{currentWeather.date.slice(5, 6)}</p>
-                            <p>Temperature: {currentWeather.temperature}°,
-                                Humidity: {currentWeather.humidity}%</p>
+                            <p>Weather measured {measurementTimeString} {measurementDateString}</p>
+                            <p>
+                                Temperature: {currentWeather.temperature}°,
+                                Humidity: {currentWeather.humidity}%
+                            </p>
                             <p>Wind Direction: {currentWeather.windDirection}°</p>
                         </article>
                     )
