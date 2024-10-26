@@ -62,7 +62,7 @@ const ForecastTable = ({ forecastData }) => {
 		<DataTable
 			columns={columns}
 			data={forecastData}
-			title="5-Day Forecast for Helsinki"
+			title="7-Day Forecast for Helsinki"
 			responsive={true}
 		/>
 	);
