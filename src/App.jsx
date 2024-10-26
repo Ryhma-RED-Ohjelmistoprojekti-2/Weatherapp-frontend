@@ -22,6 +22,7 @@ function App() {
     date: ""
   });
   const [weatherData, setWeatherData] = useState([]);
+  const [forecastData, setForecastData] = useState([]);
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
 
@@ -51,6 +52,41 @@ function App() {
     return () => clearInterval(fetchIntervalId);
   }, []);
 
+
+  // Fetch 7-day forecast for Helsinki from Open-Meteo
+  useEffect(() => {
+    const fetchForecastData = async () => {
+      try {
+        const response = await fetch(
+          "https://api.open-meteo.com/v1/forecast?latitude=60.1695&longitude=24.9354&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&timezone=Europe/Helsinki"
+        );
+        if (!response.ok) throw new Error("Could not fetch forecast data");
+
+        const forecastData = await response.json();
+
+        if (!forecastData.daily || forecastData.daily.time.length === 0) {
+          console.error("No daily forecast data available");
+          return;
+        }
+
+        const dailyForecast = forecastData.daily.time.map((date, index) => ({
+          applicable_date: date,
+          max_temp: forecastData.daily.temperature_2m_max[index],
+          min_temp: forecastData.daily.temperature_2m_min[index],
+          precipitation: forecastData.daily.precipitation_sum[index],
+          weather_code: forecastData.daily.weathercode[index]
+        }));
+
+        setForecastData(dailyForecast);
+      } catch (error) {
+        setError("Forecast fetch error: " + error.message);
+      }
+    };
+
+    fetchForecastData();
+  }, []);
+
+
   return (
     <>
       <header>
@@ -59,7 +95,7 @@ function App() {
       <main>
         <CurrentWeatherCard currentWeather={currentWeather} loading={loading} error={error} />
         <HistoryCard weatherData={weatherData} loading={loading} error={error} />
-        <ForecastCard />
+        <ForecastCard forecastData={forecastData} loading={loading} error={error} />
       </main>
     </>
   )

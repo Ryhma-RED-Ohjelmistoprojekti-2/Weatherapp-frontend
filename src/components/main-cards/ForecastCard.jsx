@@ -1,6 +1,6 @@
 import ForecastTable from "../charts/ForecastTable"
 
-const ForecastCard = () => {
+const ForecastCard = ({ forecastData }) => {
 
     return (
         <section className="weathercard">
@@ -8,7 +8,7 @@ const ForecastCard = () => {
                 <h2>Forecast</h2>
             </div>
             <div className="weathercard-content">
-                <ForecastTable />
+                <ForecastTable forecastData={forecastData}/>
             </div>
         </section>
     )
