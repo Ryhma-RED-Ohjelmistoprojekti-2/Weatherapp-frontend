@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { dbUrl } from "./constants/constants";
 import "./App.css";
 import "./css/cards.css"
@@ -7,6 +7,8 @@ import HistoryCard from "./components/main-cards/HistoryCard";
 import ForecastCard from "./components/main-cards/ForecastCard";
 
 function App() {
+  //Title or name of the airport. It is saved as environment variable in .env file.
+  const title = import.meta.env.VITE_TITLE;
 
   const [currentWeather, setCurrentWeather] = useState({
     id: 0,
@@ -90,8 +92,8 @@ function App() {
   return (
     <>
       <header>
-        <h1>
-          <img src="src/Hyvinkaan_lentokentan_saa_title.png" class="titleResponsive" alt="Title of weatherapp" />
+        <h1 class="titleResponsive" alt="Title of weatherapp">
+          {title}
         </h1>
       </header>
       <main>
