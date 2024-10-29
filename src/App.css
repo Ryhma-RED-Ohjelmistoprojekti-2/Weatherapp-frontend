@@ -42,6 +42,12 @@ body {
   height: 250px;
 }
 
+.hyperlinkStyle {
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
 header {
   display: flex;
   justify-content: center;

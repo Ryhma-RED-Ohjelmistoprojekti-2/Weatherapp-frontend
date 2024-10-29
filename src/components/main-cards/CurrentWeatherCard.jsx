@@ -37,6 +37,12 @@ const CurrentWeatherCard = () => {
                     <METARCard />
                 </METARProvider>
             </div>
+            <div className="hyperlinkStyle">
+                <a href="https://www.ilmailusaa.fi/weather-flightpath.html?location#select-area=1#textproduct-querysettings-radius=100#observation-mode=metar#id=radar#obsManualLookup0=">
+                    Sää lentopaikalla (fmi)
+                </a>
+            </div>
+
         </section>
     );
 }
