@@ -2,8 +2,7 @@
 
 body {
 
-  background-image: url('src/Hyvinkaan_lentokentan_saa_background_desktop.png');
-
+  background-image: url('src/assets/app_background_desktop.png');
 
   /*This is will rescale background image based on the container's size.
   
@@ -55,9 +54,8 @@ header {
 
 header h1 {
   background-color: #0c0901;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
-
   font-family: Arial, Helvetica, sans-serif;
   font-size: 48px;
   color: white;
@@ -72,13 +70,13 @@ main {
 
 @media (max-width: 760px) {
   body {
-    background-image: url('src/Hyvinkaan_lentokentan_saa_background_mobile.png');
+    background-image: url('src/assets/app_background_mobile.png');
     background-size: cover;
     background-attachment: fixed;
   }
 
   header h1 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   main {
@@ -88,7 +86,7 @@ main {
 
 @media (min-width: 761px) and (max-width: 1325px) {
   body {
-    background-image: url('src/Hyvinkaan_lentokentan_saa_background_tablet.png');
+    background-image: url('src/assets/app_background_tablet.png');
     background-size: cover;
     background-attachment: fixed;
   }
