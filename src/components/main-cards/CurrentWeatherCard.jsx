@@ -1,6 +1,7 @@
 import AirportCard from "../sub-cards/AirportCard";
 import METARCard from "../sub-cards/METARCard";
 import { useWeather } from "../../hooks/UseWeather";
+import METARProvider from "../../utils/METARContext";
 
 const CurrentWeatherCard = () => {
 
@@ -32,7 +33,9 @@ const CurrentWeatherCard = () => {
                     )
                 }
                 <AirportCard />
-                <METARCard />
+                <METARProvider>
+                    <METARCard />
+                </METARProvider>
             </div>
         </section>
     );

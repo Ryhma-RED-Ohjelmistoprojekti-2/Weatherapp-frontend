@@ -1,38 +1,8 @@
-import { useState, useEffect } from "react";
+import useMETAR from "../../hooks/useMETAR"
 
 const METARCard = () => {
 
-    const [metars, setMetars] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const fetchMetarData = async () => {
-            try {
-                setLoading(true);
-                const response = await fetch("https://api.met.no/weatherapi/tafmetar/1.0/metar?icao=EFHK%2CEFTU%2CEFTP");
-                if (!response.ok) throw new Error("Issue fetching metar data!");
-                const metarData = await response.text();
-                const metarArray = [];
-                const EFHKDataArray = metarData.split("\n").filter(line => line.startsWith("EFHK"));
-                const lastEFHKMetar = EFHKDataArray[EFHKDataArray.length - 1];
-                metarArray.push(lastEFHKMetar);
-                const EFTUDataArray = metarData.split("\n").filter(line => line.startsWith("EFTU"));
-                const lastEFTUMetar = EFTUDataArray[EFTUDataArray.length - 1];
-                metarArray.push(lastEFTUMetar)
-                const EFTPDataArray = metarData.split("\n").filter(line => line.startsWith("EFTP"));
-                const lastEFTPMetar = EFTPDataArray[EFTPDataArray.length - 1];
-                metarArray.push(lastEFTPMetar)
-                setMetars(metarArray);
-                setLoading(false);
-            } catch (error) {
-                setError(error.message);
-                setLoading(false);
-            }
-        }
-
-        fetchMetarData();
-    }, [])
+    const { metars, loadingMetars, metarError } = useMETAR();
 
     return (
         <article className="metarcard">
@@ -41,10 +11,10 @@ const METARCard = () => {
             </div>
             <div className="metarcard-content">
                 {
-                    loading ? (
+                    loadingMetars ? (
                         <p>Loading METAR data...</p>
-                    ) : error ? (
-                        <p style={{ color: 'black' }}>Error: {error}</p>
+                    ) : metarError ? (
+                        <p style={{ color: 'black' }}>Error: {metarError}</p>
                     ) : (
                         <>
                             {metars.map((metar, index) => <p key={index}>{metar}</p>)}
