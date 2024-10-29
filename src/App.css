@@ -1,9 +1,40 @@
 /* styles for general layout */
 
 body {
-  background-color: gray;
+
+  background-image: url('src/Hyvinkaan_lentokentan_saa_background_desktop.png');
+
+
+  /*This is will rescale background image based on the container's size.
+  
+  Source: https://www.browserstack.com/guide/how-to-make-images-responsive
+
+  Co-pilot's text prompt:
+  I need to draw a vector illustration in Clip Studio Paint, 
+  that will be used as background for a responsive website. 
+  What was the default dimension (pixels) of background for desktop mode?
+  */
+  background-size: cover;
+  background-attachment: fixed;
+
+  /*For accessibility, we used WebAIM for color check:
+  https://webaim.org/resources/contrastchecker/*/
+  background-color: #170181;
+
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/*Responsive background image.*/
+
+.backgroundResponsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.backgroundTitleDimension {
+  max-width: 100%;
+  height: 250px;
 }
 
 header {
@@ -25,12 +56,24 @@ main {
 }
 
 @media (max-width: 760px) {
+  body {
+    background-image: url('src/Hyvinkaan_lentokentan_saa_background_mobile.png');
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
   main {
     grid-template-columns: 360px;
   }
 }
 
 @media (min-width: 761px) and (max-width: 1325px) {
+  body {
+    background-image: url('src/Hyvinkaan_lentokentan_saa_background_tablet.png');
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
   main {
     grid-template-columns: 360px 360px;
   }

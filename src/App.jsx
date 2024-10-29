@@ -90,8 +90,8 @@ function App() {
   return (
     <>
       <header>
-        <h1>Weather App</h1>
       </header>
+      <div class="backgroundTitleDimension"></div>
       <main>
         <CurrentWeatherCard currentWeather={currentWeather} loading={loading} error={error} />
         <HistoryCard weatherData={weatherData} loading={loading} error={error} />
