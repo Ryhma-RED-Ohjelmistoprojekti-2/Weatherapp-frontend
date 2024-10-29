@@ -1,7 +1,10 @@
 import AirportCard from "../sub-cards/AirportCard";
 import METARCard from "../sub-cards/METARCard";
+import { useWeather } from "../../hooks/UseWeather";
 
-const CurrentWeatherCard = ({ currentWeather, loading, error }) => {
+const CurrentWeatherCard = () => {
+
+    const { currentWeather, loading, error } = useWeather();
 
     const measurementTimeString = `${currentWeather.time.slice(0, 2)}.${currentWeather.time.slice(2, 4)}`;
     const measurementDateString = `${currentWeather.date.slice(6, currentWeather.date.length)}.${currentWeather.date.slice(5, 6)}`;
@@ -28,7 +31,7 @@ const CurrentWeatherCard = ({ currentWeather, loading, error }) => {
                         </article>
                     )
                 }
-                <AirportCard currentWeather={currentWeather} />
+                <AirportCard />
                 <METARCard />
             </div>
         </section>

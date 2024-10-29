@@ -1,6 +1,9 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useWeather } from '../../hooks/UseWeather';
 
-export default function WeatherHistoryChart({ weatherData }) {
+export default function WeatherHistoryChart() {
+
+    const { weatherData } = useWeather();
 
     const data = weatherData.slice(-7).map(({ time, avgWindSpeed, windDirection }) => ({
         time: `${time.slice(0, 2)}:${time.slice(2, 4)}:${time.slice(4, 6)}`,

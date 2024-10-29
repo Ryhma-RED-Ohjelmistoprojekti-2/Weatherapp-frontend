@@ -1,7 +1,11 @@
 import WeatherHistoryChart from "../charts/WeatherHistoryChart"
 import WindroseChart from "../charts/WindroseChart"
+import { useWeather } from "../../hooks/UseWeather";
 
-const HistoryCard = ({ weatherData, loading, error }) => {
+const HistoryCard = () => {
+
+    const { loading, error } = useWeather();
+
     return (
         <section className="weathercard">
             <div className="weathercard-header">
@@ -15,8 +19,8 @@ const HistoryCard = ({ weatherData, loading, error }) => {
                         <p style={{ color: 'black' }}>Error: {error}</p>
                     ) : (
                         <>
-                            <WeatherHistoryChart weatherData={weatherData} />
-                            <WindroseChart weatherData={weatherData} />
+                            <WeatherHistoryChart />
+                            <WindroseChart />
                         </>
                     )
                 }

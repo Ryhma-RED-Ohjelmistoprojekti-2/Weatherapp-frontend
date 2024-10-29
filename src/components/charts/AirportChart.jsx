@@ -1,7 +1,10 @@
 import { Stage, Layer, Line, Text, Ring, Arrow } from 'react-konva';
 import React from 'react';
+import { useWeather } from '../../hooks/UseWeather';
 
-const AirportChart = ({ currentWeather }) => {
+const AirportChart = () => {
+
+    const { currentWeather } = useWeather();
 
     //this code defines the center of the coordinate grid
     const centeredXCoordinate = 155;
@@ -37,6 +40,8 @@ const AirportChart = ({ currentWeather }) => {
                 {
                     anglePairs.map((pair, index) => {
                         const angles = pair.split("/");
+
+                        console.log(angles);
 
                         const firstDegreeAngle = Number(angles[0]) * 10;
                         const secondDegreeAngle = Number(angles[1]) * 10;
