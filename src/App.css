@@ -1,4 +1,4 @@
-/* styles for general layout */
+/*Responsive background image.*/
 
 body {
 
@@ -24,8 +24,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/*Responsive background image.*/
-
 .titleResponsive {
   max-width: 100%;
   height: auto;
@@ -41,11 +39,7 @@ body {
   height: 250px;
 }
 
-.hyperlinkStyle {
-  padding: 20px;
-  text-align: center;
-  font-size: 18px;
-}
+/* styles for general layout */
 
 header {
   display: flex;
@@ -68,11 +62,14 @@ main {
   column-gap: 30px;
 }
 
+.hyperlinkStyle {
+  padding-top: 20px;
+  font-size: 18px;
+}
+
 @media (max-width: 760px) {
   body {
     background-image: url('src/assets/app_background_mobile.png');
-    background-size: cover;
-    background-attachment: fixed;
   }
 
   header h1 {
@@ -87,8 +84,6 @@ main {
 @media (min-width: 761px) and (max-width: 1325px) {
   body {
     background-image: url('src/assets/app_background_tablet.png');
-    background-size: cover;
-    background-attachment: fixed;
   }
 
   header h1 {
