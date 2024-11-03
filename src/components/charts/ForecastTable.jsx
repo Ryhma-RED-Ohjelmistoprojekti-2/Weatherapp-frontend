@@ -34,7 +34,7 @@ const ForecastTable = () => {
 		return <p>There are no records to display</p>;
 	}
 
-	const columns = [
+/* 	const columns = [
 		{
 			name: 'Date',
 			selector: row => formatDate(row.applicable_date),
@@ -60,12 +60,37 @@ const ForecastTable = () => {
 			selector: row => getWeatherDescription(row.weather_code),
 			sortable: true,
 		},
+	]; */
+
+	//nää on tässä vaa sen takii placeholderina ettei sovellus kaadu
+	const columns = [
+		{
+			name: 'Title',
+			selector: row => row.title,
+		},
+		{
+			name: 'Year',
+			selector: row => row.year,
+		},
 	];
+	
+	const data = [
+		  {
+			id: 1,
+			title: 'Beetlejuice',
+			year: '1988',
+		},
+		{
+			id: 2,
+			title: 'Ghostbusters',
+			year: '1984',
+		},
+	]
 
 	return (
 		<DataTable
 			columns={columns}
-			data={forecastData}
+			data={data}
 			title="7-Day Forecast for Helsinki"
 			responsive={true}
 		/>

@@ -44,7 +44,7 @@ export const WeatherProvider = ({ children }) => {
     const fetchForecastData = async () => {
       try {
         const response = await fetch(
-          "https://api.open-meteo.com/v1/forecast?latitude=60.1695&longitude=24.9354&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&timezone=Europe/Helsinki"
+          "https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=60.192059&lon=24.945831"
         );
         if (!response.ok) throw new Error("Could not fetch forecast data");
 
@@ -55,15 +55,15 @@ export const WeatherProvider = ({ children }) => {
           return;
         }
 
-        const dailyForecast = forecastData.daily.time.map((date, index) => ({
+/*         const dailyForecast = forecastData.daily.time.map((date, index) => ({
           applicable_date: date,
           max_temp: forecastData.daily.temperature_2m_max[index],
           min_temp: forecastData.daily.temperature_2m_min[index],
           precipitation: forecastData.daily.precipitation_sum[index],
           weather_code: forecastData.daily.weathercode[index]
-        }));
+        })); */
 
-        setForecastData(dailyForecast);
+        setForecastData(forecastData);
       } catch (error) {
         setError("Forecast fetch error: " + error.message);
       }
