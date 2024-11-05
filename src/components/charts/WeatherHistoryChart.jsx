@@ -13,16 +13,17 @@ import { useEffect, useState, Button } from "react";
 
 export default function WeatherHistoryChart() {
   const [testiData, setTestiData] = useState([]);
+
   useEffect(() => {
     const getData = async () => {
       try {
         const res = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=30.16952&lon=24.93545&appid=28c945d285c5d449440ecba5744e5767`
+          `https://api.openweathermap.org/data/2.5/weather?lat=60.16952&lon=24.93545&appid=28c945d285c5d449440ecba5744e5767`
         );
         const data = await res.json();
         const newEntry = [
           {
-            time: new Date().toLocaleTimeString().slice(0,5), // tunnit ja minuutit
+            time: new Date().toLocaleTimeString().slice(0, 5), // tunnit ja minuutit
             speed: data.wind.speed,
             direction: data.wind.deg,
             windGust: data.wind.gust || 0,
@@ -69,7 +70,7 @@ export default function WeatherHistoryChart() {
             position: "insideBottomLeft",
             offset: 25,
           }}
-          domain={[0, 8]} // tuulen nopeus mitat
+          domain={[0, 20]} // tuulen nopeus mitat
         />
 
         {/* Toinen Y-akseli tuulen suunnalle (oikealla puolella) */}
@@ -80,16 +81,20 @@ export default function WeatherHistoryChart() {
             value: "Wind Direction",
             angle: -90,
             position: "insideRight",
-            offset: 10,
+            offset: 50,
           }}
-          domain={[0, 360]} // Tuulen suunta 0-360 astetta
+          domain={[0, 360]}
         />
         {/* <YAxis
-                    yAxisId="right"
-                    orientation="right"
-                    label={{ value: "Wind Gusts", angle: -90, position: "insideRight", offset: 50 }}
-                    domain={[0, 360]} // tuulen puuskat
-                /> */}
+          yAxisId="right"
+          orientation="right"
+          label={{
+            value: "Wind Gusts",
+            angle: -90,
+            position: "insideRight",
+            offset: 50,
+          }}
+        /> */}
 
         <Tooltip />
         <Legend />
@@ -114,7 +119,7 @@ export default function WeatherHistoryChart() {
         />
         {/* Tuulen puuskat */}
         <Line
-          yAxisId="right"
+          yAxisId="left"
           type="monotone"
           dataKey="windGust"
           stroke="green"
