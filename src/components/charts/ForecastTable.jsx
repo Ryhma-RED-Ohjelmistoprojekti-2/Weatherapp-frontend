@@ -1,43 +1,46 @@
 import DataTable from "react-data-table-component";
 import { useForecast } from "../../hooks/useForecast";
 
-// Function to format the date from YYYY-MM-DD to DD-MM-YYYY
-const formatDate = (dateString) => {
-	const [year, month, day] = dateString.split("-");
-	return `${day}-${month}-${year}`;
+// Import weather icons
+import clearsky_day from './weatherIcons/clearsky_day.png';
+import clearsky_night from './weatherIcons/clearsky_night.png';
+import fair_day from './weatherIcons/fair_day.png';
+import fair_night from './weatherIcons/fair_night.png';
+import partlycloudy_day from './weatherIcons/partlycloudy_day.png';
+import partlycloudy_night from './weatherIcons/partlycloudy_night.png';
+import cloudy from './weatherIcons/cloudy.png';
+import lightrainshowers_day from './weatherIcons/lightrainshowers_day.png';
+import lightrainshowers_night from './weatherIcons/lightrainshowers_night.png';
+import rainshowers_day from './weatherIcons/rainshowers_day.png';
+import rainshowers_night from './weatherIcons/rainshowers_night.png';
+import heavyrainshowers_day from './weatherIcons/heavyrainshowers_day.png';
+import heavyrainshowers_night from './weatherIcons/heavyrainshowers_night.png';
+import fog from './weatherIcons/fog.png';
+
+// Function to get icon based on the weather symbol_code and time of day
+const getWeatherIcon = (symbolCode, isDaytime) => {
+    // Map the symbol codes from your data to local icon variables
+    const iconMap = {
+        "clearsky": isDaytime ? clearsky_day : clearsky_night,
+        "fair": isDaytime ? fair_day : fair_night,
+        "partlycloudy": isDaytime ? partlycloudy_day : partlycloudy_night,
+        "cloudy": cloudy,
+        "lightrainshowers": isDaytime ? lightrainshowers_day : lightrainshowers_night,
+        "rainshowers": isDaytime ? rainshowers_day : rainshowers_night,
+        "heavyrainshowers": isDaytime ? heavyrainshowers_day : heavyrainshowers_night,
+        "fog": fog,
+        // Add more mappings based on your CSV
+    };
+
+    return iconMap[symbolCode] || clearsky_day; // Default to a sunny day icon if no match
 };
 
-// Function to map weather codes to descriptions
-const getWeatherDescription = (weatherCode) => {
-	switch (weatherCode) {
-		case 0:
-			return "Clear sky";
-		case 1:
-			return "Mainly clear";
-		case 2:
-			return "Partly cloudy";
-		case 3:
-			return "Overcast";
-		case 45:
-			return "Fog";
-		case 51:
-			return "Drizzle";
-		case 53:
-			return "Light rain";
-		case 61:
-			return "Rain";
-		case 63:
-			return "Heavy rain";
-		case 80:
-			return "Showers";
-		case 95:
-			return "Thunderstorms";
-		case 99:
-			return "Severe thunderstorms";
-		default:
-			return "Unknown weather condition";
-	}
+// Helper function to determine if it’s day or night
+const isDaytime = (date) => {
+    const hour = new Date(date).getHours();
+    return hour >= 6 && hour < 18; // Define day as between 6 AM and 6 PM
 };
+
 
 const ForecastTable = () => {
 	const { forecastData } = useForecast();
@@ -46,35 +49,7 @@ const ForecastTable = () => {
 		return <p>There are no records to display</p>;
 	}
 
-	/* 	const columns = [
-		  {
-			  name: 'Date',
-			  selector: row => formatDate(row.applicable_date),
-			  sortable: true,
-		  },
-		  {
-			  name: 'Max Temperature (°C)',
-			  selector: row => row.max_temp.toFixed(1),
-			  sortable: true,
-		  },
-		  {
-			  name: 'Min Temperature (°C)',
-			  selector: row => row.min_temp.toFixed(1),
-			  sortable: true,
-		  },
-		  {
-			  name: 'Precipitation (mm)',
-			  selector: row => row.precipitation.toFixed(1),
-			  sortable: true,
-		  },
-		  {
-			  name: 'Weather',
-			  selector: row => getWeatherDescription(row.weather_code),
-			  sortable: true,
-		  },
-	  ]; */
 
-	//nää on tässä vaa sen takii placeholderina ettei sovellus kaadu
 	const columns = [
 		{
 			name: "Time",
@@ -105,27 +80,31 @@ const ForecastTable = () => {
 		{
 			name: "Hum, Dp",
 			selector: (row) => row.data.instant.details.relative_humidity + "%, "
-			+ row.data.instant.details.dew_point_temperature + "°"
+				+ row.data.instant.details.dew_point_temperature + "°"
 		},
 		{
 			name: "Wind",
-			selector: (row) => row.data.instant.details.wind_from_direction + "°, " 
-			+ row.data.instant.details.wind_speed + "m/s"
-		}
+			selector: (row) => row.data.instant.details.wind_from_direction + "°, "
+				+ row.data.instant.details.wind_speed + "m/s"
+		},
+		{
+            name: "Weather",
+            cell: (row) => {
+                const daytime = isDaytime(row.time);
+                return (
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <img 
+                            src={getWeatherIcon(row.data.next_1_hours.summary.symbol_code, daytime)} 
+                            alt={row.data.next_1_hours.summary.symbol_code} 
+                            style={{ width: 24, height: 24, marginRight: 8 }}
+                        />
+                        <span>{row.data.next_1_hours.summary.symbol_code}</span>
+                    </div>
+                );
+            }
+        }
 	];
 
-	const data = [
-		{
-			id: 1,
-			title: "Beetlejuice",
-			year: "1988",
-		},
-		{
-			id: 2,
-			title: "Ghostbusters",
-			year: "1984",
-		},
-	];
 
 	return (
 		<DataTable
