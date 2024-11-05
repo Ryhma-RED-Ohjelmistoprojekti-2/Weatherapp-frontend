@@ -19,11 +19,6 @@ export const ForecastProvider = ({ children }) => {
 
         const forecastData = await response.json();
 
-        if (!forecastData.daily || forecastData.daily.time.length === 0) {
-          console.error("No daily forecast data available");
-          return;
-        }
-
         /*         const dailyForecast = forecastData.daily.time.map((date, index) => ({
                 applicable_date: date,
                 max_temp: forecastData.daily.temperature_2m_max[index],
@@ -32,7 +27,7 @@ export const ForecastProvider = ({ children }) => {
                 weather_code: forecastData.daily.weathercode[index]
               })); */
 
-        setForecastData(forecastData);
+        setForecastData(forecastData.properties.timeseries.slice(0, 7));
       } catch (error) {
         setError("Forecast fetch error: " + error.message);
       } finally {
