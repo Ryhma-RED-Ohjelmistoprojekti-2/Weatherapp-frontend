@@ -35,5 +35,5 @@ Public APIs currently in use:
   EFTU: Turku Airport (Finland), 
   EFTP: Tampere-Pirkkala Airport (Finland)
 
-  Weather icons:
-  https://github.com/metno/weathericons
+Weather icons:
+https://github.com/metno/weathericons
