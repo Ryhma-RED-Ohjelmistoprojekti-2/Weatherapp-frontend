@@ -78,12 +78,12 @@ export default function WeatherHistoryChart() {
           yAxisId="right"
           orientation="right"
           label={{
-            value: "windGust",
+            value: "Wind Direction",
             angle: -90,
             position: "insideRight",
             offset: 50,
           }}
-          domain={[0, 25]}
+          domain={[0, 360]}
         />
         {/* <YAxis
           yAxisId="right"
