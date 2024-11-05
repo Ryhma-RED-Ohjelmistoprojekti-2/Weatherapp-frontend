@@ -4,7 +4,6 @@ import { dbUrl } from "../constants/constants";
 export const WeatherContext = createContext();
 
 export const WeatherProvider = ({ children }) => {
-
   const [currentWeather, setCurrentWeather] = useState({
     id: 0,
     temperature: 0,
@@ -19,7 +18,6 @@ export const WeatherProvider = ({ children }) => {
     date: "",
   });
   const [weatherData, setWeatherData] = useState([]);
-  const [forecastData, setForecastData] = useState([]);
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState(null);
 
@@ -41,36 +39,7 @@ export const WeatherProvider = ({ children }) => {
       }
     };
 
-    const fetchForecastData = async () => {
-      try {
-        const response = await fetch(
-          "https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=60.192059&lon=24.945831"
-        );
-        if (!response.ok) throw new Error("Could not fetch forecast data");
-
-        const forecastData = await response.json();
-
-        if (!forecastData.daily || forecastData.daily.time.length === 0) {
-          console.error("No daily forecast data available");
-          return;
-        }
-
-/*         const dailyForecast = forecastData.daily.time.map((date, index) => ({
-          applicable_date: date,
-          max_temp: forecastData.daily.temperature_2m_max[index],
-          min_temp: forecastData.daily.temperature_2m_min[index],
-          precipitation: forecastData.daily.precipitation_sum[index],
-          weather_code: forecastData.daily.weathercode[index]
-        })); */
-
-        setForecastData(forecastData);
-      } catch (error) {
-        setError("Forecast fetch error: " + error.message);
-      }
-    };
-
     fetchWeatherData();
-    fetchForecastData();
 
     const fetchIntervalId = setInterval(() => {
       fetchWeatherData();
@@ -82,10 +51,9 @@ export const WeatherProvider = ({ children }) => {
   const providerValue = {
     currentWeather,
     weatherData,
-    forecastData,
     loading,
-    error
-  }
+    error,
+  };
 
   return (
     <WeatherContext.Provider value={providerValue}>

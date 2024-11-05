@@ -1,40 +1,52 @@
-import DataTable from 'react-data-table-component';
-import { useWeather } from '../../hooks/UseWeather';
+import DataTable from "react-data-table-component";
+import { useForecast } from "../../hooks/useForecast";
 
 // Function to format the date from YYYY-MM-DD to DD-MM-YYYY
 const formatDate = (dateString) => {
-	const [year, month, day] = dateString.split('-');
-	return `${day}-${month}-${year}`;
+  const [year, month, day] = dateString.split("-");
+  return `${day}-${month}-${year}`;
 };
 
 // Function to map weather codes to descriptions
 const getWeatherDescription = (weatherCode) => {
-	switch (weatherCode) {
-		case 0: return "Clear sky";
-		case 1: return "Mainly clear";
-		case 2: return "Partly cloudy";
-		case 3: return "Overcast";
-		case 45: return "Fog";
-		case 51: return "Drizzle";
-		case 53: return "Light rain";
-		case 61: return "Rain";
-		case 63: return "Heavy rain";
-		case 80: return "Showers";
-		case 95: return "Thunderstorms";
-		case 99: return "Severe thunderstorms";
-		default: return "Unknown weather condition";
-	}
+  switch (weatherCode) {
+    case 0:
+      return "Clear sky";
+    case 1:
+      return "Mainly clear";
+    case 2:
+      return "Partly cloudy";
+    case 3:
+      return "Overcast";
+    case 45:
+      return "Fog";
+    case 51:
+      return "Drizzle";
+    case 53:
+      return "Light rain";
+    case 61:
+      return "Rain";
+    case 63:
+      return "Heavy rain";
+    case 80:
+      return "Showers";
+    case 95:
+      return "Thunderstorms";
+    case 99:
+      return "Severe thunderstorms";
+    default:
+      return "Unknown weather condition";
+  }
 };
 
 const ForecastTable = () => {
+  const { forecastData } = useForecast();
 
-	const { forecastData } = useWeather();
+  if (!forecastData || forecastData.length === 0) {
+    return <p>There are no records to display</p>;
+  }
 
-	if (!forecastData || forecastData.length === 0) {
-		return <p>There are no records to display</p>;
-	}
-
-/* 	const columns = [
+  /* 	const columns = [
 		{
 			name: 'Date',
 			selector: row => formatDate(row.applicable_date),
@@ -62,39 +74,39 @@ const ForecastTable = () => {
 		},
 	]; */
 
-	//nää on tässä vaa sen takii placeholderina ettei sovellus kaadu
-	const columns = [
-		{
-			name: 'Title',
-			selector: row => row.title,
-		},
-		{
-			name: 'Year',
-			selector: row => row.year,
-		},
-	];
-	
-	const data = [
-		  {
-			id: 1,
-			title: 'Beetlejuice',
-			year: '1988',
-		},
-		{
-			id: 2,
-			title: 'Ghostbusters',
-			year: '1984',
-		},
-	]
+  //nää on tässä vaa sen takii placeholderina ettei sovellus kaadu
+  const columns = [
+    {
+      name: "Title",
+      selector: (row) => row.title,
+    },
+    {
+      name: "Year",
+      selector: (row) => row.year,
+    },
+  ];
 
-	return (
-		<DataTable
-			columns={columns}
-			data={data}
-			title="7-Day Forecast for Helsinki"
-			responsive={true}
-		/>
-	);
+  const data = [
+    {
+      id: 1,
+      title: "Beetlejuice",
+      year: "1988",
+    },
+    {
+      id: 2,
+      title: "Ghostbusters",
+      year: "1984",
+    },
+  ];
+
+  return (
+    <DataTable
+      columns={columns}
+      data={data}
+      title="7-Day Forecast for Helsinki"
+      responsive={true}
+    />
+  );
 };
 
-export default ForecastTable
+export default ForecastTable;
