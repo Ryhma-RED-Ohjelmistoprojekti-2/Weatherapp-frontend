@@ -15,25 +15,28 @@ React Data Table Component
 
 React Konva Library
 - https://konvajs.org/ 
-- A JavaScript library for drawing complex canvas graphics using React.
 - Used in this project to draw airport runways and wind direction arrow.
 
 Recharts Library
 - https://recharts.org/en-US/ 
-- A composable charting library built on React components.
 - Used in this project to display wind direction and speed history data.
 
 Windrose Chart Component
 - https://www.npmjs.com/package/@eunchurn/react-windrose
-- A React component for rendering windroses, useful for displaying wind direction data.
 - Used in this project to display wind direction and speed data.
 
 Public APIs currently in use:
 
-- Norwegian Meteorological Institute WeatherAPI to get weather forecasts for 3 airports:
+Norwegian Meteorological Institute "Tafmetar 1.0" api to get metars for 3 airports
+
+- https://api.met.no/weatherapi/tafmetar/1.0/documentation
+
+- Airport metars:
+
   EFHK: Helsinki-Vantaa Airport (Finland), 
   EFTU: Turku Airport (Finland), 
   EFTP: Tampere-Pirkkala Airport (Finland)
 
-Weather icons:
-https://github.com/metno/weathericons
+Norwegian Meteorological Institute "Locationforecast 2.0" api to get hourly forecasts for a specified place
+
+- https://api.met.no/weatherapi/locationforecast/2.0/documentation
