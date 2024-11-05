@@ -1,13 +1,25 @@
 import ForecastTable from "../charts/ForecastTable"
+import { useForecast } from "../../hooks/useForecast"
 
 const ForecastCard = () => {
+
+    const { loadingForecast, forecastError } = useForecast();
+
     return (
         <section className="weathercard">
             <div className="weathercard-header">
                 <h2>Forecast</h2>
             </div>
             <div className="weathercard-content">
-                <ForecastTable />
+                {
+                    loadingForecast ? (
+                        <p>Loading forecast...</p>
+                    ) : forecastError ? (
+                        <p style={{ color: 'black' }}>Error: {forecastError}</p>
+                    ) : (
+                        <ForecastTable />
+                    )
+                }
             </div>
         </section>
     )

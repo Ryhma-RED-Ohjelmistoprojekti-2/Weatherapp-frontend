@@ -1,6 +1,6 @@
 import { Stage, Layer, Line, Text, Ring, Arrow } from 'react-konva';
 import React from 'react';
-import { useWeather } from '../../hooks/UseWeather';
+import { useWeather } from '../../hooks/useWeather';
 
 const AirportChart = () => {
 

@@ -1,6 +1,6 @@
 import WeatherHistoryChart from "../charts/WeatherHistoryChart"
 import WindroseChart from "../charts/WindroseChart"
-import { useWeather } from "../../hooks/UseWeather";
+import { useWeather } from "../../hooks/useWeather";
 
 const HistoryCard = () => {
 

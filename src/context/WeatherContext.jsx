@@ -33,7 +33,6 @@ export const WeatherProvider = ({ children }) => {
         setWeatherData(responseData);
       } catch (error) {
         setError(error.message);
-        setLoading(false);
       } finally {
         setLoading(false);
       }

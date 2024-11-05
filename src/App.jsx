@@ -3,8 +3,8 @@ import "./css/cards.css";
 import CurrentWeatherCard from "./components/main-cards/CurrentWeatherCard";
 import HistoryCard from "./components/main-cards/HistoryCard";
 import ForecastCard from "./components/main-cards/ForecastCard";
-import { WeatherProvider } from "./utils/WeatherContext";
-import { ForecastProvider } from "./utils/ForecastContext";
+import { WeatherProvider } from "./context/WeatherContext";
+import { ForecastProvider } from "./context/ForecastContext";
 
 function App() {
   //Title or name of the airport. It is saved as environment variable in .env file.

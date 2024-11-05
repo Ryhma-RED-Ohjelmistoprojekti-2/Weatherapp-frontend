@@ -1,7 +1,7 @@
 import AirportCard from "../sub-cards/AirportCard";
 import METARCard from "../sub-cards/METARCard";
-import { useWeather } from "../../hooks/UseWeather";
-import METARProvider from "../../utils/METARContext";
+import { useWeather } from "../../hooks/useWeather";
+import METARProvider from "../../context/METARContext";
 
 const CurrentWeatherCard = () => {
 

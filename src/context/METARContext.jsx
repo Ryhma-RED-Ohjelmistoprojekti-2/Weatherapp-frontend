@@ -26,9 +26,9 @@ const METARProvider = ({ children }) => {
                 const lastEFTPMetar = EFTPDataArray[EFTPDataArray.length - 1];
                 metarArray.push(lastEFTPMetar)
                 setMetars(metarArray);
-                setLoadingMetars(false);
             } catch (error) {
                 setMetarError(error.message);
+            } finally {
                 setLoadingMetars(false);
             }
         }

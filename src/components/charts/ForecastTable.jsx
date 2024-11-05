@@ -44,17 +44,14 @@ const ForecastTable = () => {
 		}
 	];
 
-	if (!forecastData) {
-		return <p>There are no records to display</p>;
-	} else {
-		return (
-			<DataTable
-				columns={columns}
-				data={forecastData}
-				responsive={true}
-			/>
-		);
-	}
+	return (
+		<DataTable
+			columns={columns}
+			data={forecastData}
+			responsive={true}
+		/>
+	);
+
 };
 
 export default ForecastTable;

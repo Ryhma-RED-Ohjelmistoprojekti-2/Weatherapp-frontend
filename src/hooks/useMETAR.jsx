@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { METARContext } from "../utils/METARContext";
+import { METARContext } from "../context/METARContext";
 
 const useMETAR = () => {
     return useContext(METARContext);

@@ -8,7 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { useWeather } from "../../hooks/UseWeather";
+import { useWeather } from "../../hooks/useWeather";
 import { useEffect, useState, Button } from "react";
 
 export default function WeatherHistoryChart() {
@@ -36,7 +36,7 @@ export default function WeatherHistoryChart() {
       }
     };
     getData();
-    const intervalId = setInterval(getData, 5000); // hakee 5 sekunnivälei
+    const intervalId = setInterval(getData, 60000); // hakee 5 sekunnivälei
 
     return () => clearInterval(intervalId);
   }, []);
