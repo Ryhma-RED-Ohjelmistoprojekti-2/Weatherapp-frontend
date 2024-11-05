@@ -5,7 +5,7 @@ import METARProvider from "../../context/METARContext";
 
 const CurrentWeatherCard = () => {
 
-    const { currentWeather, loading, error } = useWeather();
+    const { currentWeather, loadingWeather, weatherError } = useWeather();
 
     const measurementTimeString = `${currentWeather.time.slice(0, 2)}.${currentWeather.time.slice(2, 4)}`;
     const measurementDateString = `${currentWeather.date.slice(6, currentWeather.date.length)}.${currentWeather.date.slice(5, 6)}`;
@@ -17,10 +17,10 @@ const CurrentWeatherCard = () => {
             </div>
             <div className="weathercard-content">
                 {
-                    loading ? (
+                    loadingWeather ? (
                         <p>Loading data...</p>
-                    ) : error ? (
-                        <p style={{ color: 'black' }}>Error: {error}</p>
+                    ) : weatherError ? (
+                        <p style={{ color: 'black' }}>Error: {weatherError}</p>
                     ) : (
                         <article className="weathercard-content-info">
                             <p>Weather measured {measurementTimeString} {measurementDateString}</p>

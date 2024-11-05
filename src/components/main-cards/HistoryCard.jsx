@@ -4,7 +4,7 @@ import { useWeather } from "../../hooks/useWeather";
 
 const HistoryCard = () => {
 
-    const { loading, error } = useWeather();
+    const { loadingWeather, weatherError } = useWeather();
 
     return (
         <section className="weathercard">
@@ -13,10 +13,10 @@ const HistoryCard = () => {
             </div>
             <div className="weathercard-content">
                 {
-                    loading ? (
+                    loadingWeather ? (
                         <p>Loading data...</p>
-                    ) : error ? (
-                        <p style={{ color: 'black' }}>Error: {error}</p>
+                    ) : weatherError ? (
+                        <p style={{ color: 'black' }}>Error: {weatherError}</p>
                     ) : (
                         <>
                             <WeatherHistoryChart />

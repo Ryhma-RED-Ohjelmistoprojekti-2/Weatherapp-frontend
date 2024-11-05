@@ -37,14 +37,14 @@ export const ForecastProvider = ({ children }) => {
     fetchForecastData();
   }, []);
 
-  const providerValue = {
+  const forecastProviderValue = {
     forecastData,
     loadingForecast,
     forecastError,
   };
 
   return (
-    <ForecastContext.Provider value={providerValue}>
+    <ForecastContext.Provider value={forecastProviderValue}>
       {children}
     </ForecastContext.Provider>
   );

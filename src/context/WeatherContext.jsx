@@ -18,23 +18,23 @@ export const WeatherProvider = ({ children }) => {
     date: "",
   });
   const [weatherData, setWeatherData] = useState([]);
-  const [loading, setLoading] = useState(null);
-  const [error, setError] = useState(null);
+  const [loadingWeather, setLoadingWeather] = useState(null);
+  const [weatherError, setWeatherError] = useState(null);
 
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
-        setError(null);
-        setLoading(true);
+        setWeatherError(null);
+        setLoadingWeather(true);
         const response = await fetch(`${dbUrl}/api/weathers`);
         if (!response.ok) throw new Error("Issue fetching weather data!");
         const responseData = await response.json();
         setCurrentWeather(responseData[responseData.length - 1]);
         setWeatherData(responseData);
       } catch (error) {
-        setError(error.message);
+        setWeatherError(error.message);
       } finally {
-        setLoading(false);
+        setLoadingWeather(false);
       }
     };
 
@@ -47,15 +47,15 @@ export const WeatherProvider = ({ children }) => {
     return () => clearInterval(fetchIntervalId);
   }, []);
 
-  const providerValue = {
+  const weatherProviderValue = {
     currentWeather,
     weatherData,
-    loading,
-    error,
+    loadingWeather,
+    weatherError,
   };
 
   return (
-    <WeatherContext.Provider value={providerValue}>
+    <WeatherContext.Provider value={weatherProviderValue}>
       {children}
     </WeatherContext.Provider>
   );
