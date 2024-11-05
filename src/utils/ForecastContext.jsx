@@ -1,5 +1,5 @@
+import { createContext, useEffect } from "react";
 import React from "react";
-import { createContext } from "react";
 
 export const ForecastContext = createContext();
 
@@ -8,7 +8,7 @@ export const ForecastProvider = ({ children }) => {
   const [loading, setLoading] = React.useState(null);
   const [error, setError] = React.useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchForecastData = async () => {
       setLoading(true);
       try {
@@ -17,17 +17,15 @@ export const ForecastProvider = ({ children }) => {
         );
         if (!response.ok) throw new Error("Could not fetch forecast data");
 
-        const forecastData = await response.json();
+        const data = await response.json();
 
-        /*         const dailyForecast = forecastData.daily.time.map((date, index) => ({
-                applicable_date: date,
-                max_temp: forecastData.daily.temperature_2m_max[index],
-                min_temp: forecastData.daily.temperature_2m_min[index],
-                precipitation: forecastData.daily.precipitation_sum[index],
-                weather_code: forecastData.daily.weathercode[index]
-              })); */
+        let formattedData = [];
 
-        setForecastData(forecastData.properties.timeseries.slice(0, 7));
+        for (let i = 0; i < 28; i += 2) {
+          formattedData.push(data.properties.timeseries[i]);
+        }
+
+        setForecastData(formattedData);
       } catch (error) {
         setError("Forecast fetch error: " + error.message);
       } finally {
