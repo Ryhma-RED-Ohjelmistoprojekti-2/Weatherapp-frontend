@@ -1,5 +1,6 @@
 import "./App.css";
 import "./css/cards.css";
+import backgroundImage from './assets/app_background.webp'
 import CurrentWeatherCard from "./components/main-cards/CurrentWeatherCard";
 import HistoryCard from "./components/main-cards/HistoryCard";
 import ForecastCard from "./components/main-cards/ForecastCard";
@@ -11,7 +12,7 @@ function App() {
   const title = import.meta.env.VITE_TITLE;
 
   return (
-    <>
+    <div style={{ backgroundImage: `url(${backgroundImage})` }}>
       <header>
         <h1 className="titleResponsive" alt="Title of weatherapp">
           {title}
@@ -26,7 +27,7 @@ function App() {
           <ForecastCard />
         </ForecastProvider>
       </main>
-    </>
+    </div>
   );
 }
 

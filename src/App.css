@@ -1,25 +1,4 @@
-/*Responsive background image.*/
-
 body {
-
-  background-image: url('src/assets/app_background_desktop.png');
-
-  /*This is will rescale background image based on the container's size.
-  
-  Source: https://www.browserstack.com/guide/how-to-make-images-responsive
-
-  Co-pilot's text prompt:
-  I need to draw a vector illustration in Clip Studio Paint, 
-  that will be used as background for a responsive website. 
-  What was the default dimension (pixels) of background for desktop mode?
-  */
-  background-size: cover;
-  background-attachment: fixed;
-
-  /*For accessibility, we used WebAIM for color check:
-  https://webaim.org/resources/contrastchecker/*/
-  background-color: #170181;
-
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -29,7 +8,6 @@ body {
   height: 250px;
 }
 
-/* styles for general layout */
 
 header {
   display: flex;
@@ -58,10 +36,6 @@ main {
 }
 
 @media (max-width: 760px) {
-  body {
-    background-image: url('src/assets/app_background_mobile.png');
-  }
-
   header h1 {
     font-size: 26px;
   }
@@ -72,10 +46,6 @@ main {
 }
 
 @media (min-width: 761px) and (max-width: 1325px) {
-  body {
-    background-image: url('src/assets/app_background_tablet.png');
-  }
-
   header h1 {
     font-size: 34px;
   }
