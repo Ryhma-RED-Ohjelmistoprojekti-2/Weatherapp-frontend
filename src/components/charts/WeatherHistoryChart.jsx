@@ -8,47 +8,18 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { useWeather } from "../../hooks/useWeather";
+import { useWeather } from "../../hooks/UseWeather";
 import { useEffect, useState, Button } from "react";
 
 export default function WeatherHistoryChart() {
-  const [testiData, setTestiData] = useState([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const res = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=60.16952&lon=24.93545&appid=28c945d285c5d449440ecba5744e5767`
-        );
-        const data = await res.json();
-        const newEntry = [
-          {
-            time: new Date().toLocaleTimeString().slice(0, 5), // tunnit ja minuutit
-            speed: data.wind.speed,
-            direction: data.wind.deg,
-            windGust: data.wind.gust || 0,
-          },
-        ];
-        setTestiData((prevData) => [...prevData, ...newEntry]);
-        console.log(transformedData);
-      } catch (error) {
-        console.log("error fetching testdata" + error);
-      }
-    };
-    getData();
-    const intervalId = setInterval(getData, 60000); // hakee 5 sekunnivälei
-
-    return () => clearInterval(intervalId);
-  }, []);
-
   const { weatherData } = useWeather();
 
-  // const data = weatherData.slice(-7).map(({ time, avgWindSpeed, windDirection }) => ({
-  //     time: `${time.slice(0, 2)}:${time.slice(2, 4)}:${time.slice(4, 6)}`,
-  //     speed: avgWindSpeed,
-  //     direction: windDirection,
-  //     windGust: windDirection - 50,
-  // }));
+  const data = weatherData.slice(-7).map(({ time, avgWindSpeed, windDirection }) => ({
+      time: `${time.slice(0, 2)}:${time.slice(2, 4)}:${time.slice(4, 6)}`,
+      speed: avgWindSpeed,
+      direction: windDirection,
+      windGust: windDirection - 50, //ei ole windGustia erikseen niin jotain näkyviin väliaikaisesti
+  }));
 
   return (
     <ResponsiveContainer
@@ -56,7 +27,7 @@ export default function WeatherHistoryChart() {
       height={300}
       style={{ marginTop: "15px" }}
     >
-      <LineChart data={testiData}>
+      <LineChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         {/* X-akseli ajalle */}
         <XAxis dataKey="time" />
@@ -85,16 +56,7 @@ export default function WeatherHistoryChart() {
           }}
           domain={[0, 360]}
         />
-        {/* <YAxis
-          yAxisId="right"
-          orientation="right"
-          label={{
-            value: "Wind Gusts",
-            angle: -90,
-            position: "insideRight",
-            offset: 50,
-          }}
-        /> */}
+        
 
         <Tooltip />
         <Legend />
