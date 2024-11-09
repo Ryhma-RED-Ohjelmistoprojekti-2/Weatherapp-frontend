@@ -1,5 +1,5 @@
 import { Chart, calculateWindRose } from "@eunchurn/react-windrose";
-import { useWeather } from "../../hooks/UseWeather";
+import { useWeather } from "../../hooks/useWeather";
 
 const WindroseChart = () => {
 

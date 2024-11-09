@@ -8,7 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { useWeather } from "../../hooks/UseWeather";
+import { useWeather } from "../../hooks/useWeather";
 import { useEffect, useState, Button } from "react";
 
 export default function WeatherHistoryChart() {
