@@ -21,8 +21,6 @@ const ForecastTable = () => {
 
 		const formattedDate = new Intl.DateTimeFormat("fi-FI", dateOptions).format(date);
 		return `${dayName.slice(0, 3)} ${formattedDate.replace("klo", " ")}`;
-
-		
 	};
 
 	const columns = [

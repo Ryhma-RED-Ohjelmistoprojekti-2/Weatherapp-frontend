@@ -40,3 +40,48 @@ Norwegian Meteorological Institute "Tafmetar 1.0" api to get metars for 3 airpor
 Norwegian Meteorological Institute "Locationforecast 2.0" api to get hourly forecasts for a specified place
 
 - https://api.met.no/weatherapi/locationforecast/2.0/documentation
+
+Components:
+
+Charts:
+
+AirportChart.jsx
+
+- Draws a visual representation of given airport runways and their angles.
+- Draws visual arrow showing wind direction.
+
+ForecastTable.jsx:
+
+- Table for displaying forecast for a chosen location.
+
+WeatherHistoryChart.jsx
+
+- LineChart showing history for wind direction, speed and wind gusts.
+
+WindroseChart.jsx
+
+- Windrose Chart for showing wind direction history.
+
+Main Charts:
+
+CurrentWeatherCard.jsx
+
+- Card component showing latest weather measurement information. Also works as a layout housing AirportCard.jsx and METARCard.jsx card components.
+
+ForecastCard.jsx
+
+- Card component that provides the layout for ForecastTable.jsx component.
+
+HistoryCard.jsx
+
+- Card component that provides the layout for WeatherhistoryChart.jsx and WindroseChart.jsx components.
+
+Sub Cards:
+
+AirportCard.jsx
+
+- Card component that provides the layout for AirportChart.jsx component.
+
+METARCard.jsx
+
+- Card component displaying latest METARS.
