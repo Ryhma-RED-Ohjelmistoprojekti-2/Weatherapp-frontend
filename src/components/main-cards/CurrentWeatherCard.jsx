@@ -23,12 +23,16 @@ const CurrentWeatherCard = () => {
                         <p style={{ color: 'red' }}>Error: {weatherError}</p>
                     ) : (
                         <article className="weathercard-content-info">
-                            <p>Weather measured {measurementTimeString} {measurementDateString}</p>
                             <p>
-                                Temperature: {currentWeather.temperature}°,
-                                Humidity: {currentWeather.humidity}%
+                                <span style={{ fontWeight: "bold", fontSize: 18 }}>Weather measured:</span> {measurementTimeString} {measurementDateString}
                             </p>
-                            <p>Wind Direction: {currentWeather.windDirection}°</p>
+                            <p>
+                                <span style={{ fontWeight: "bold", fontSize: 18 }}>Temperature:</span> {currentWeather.temperature}°C,
+                                <span style={{ fontWeight: "bold", fontSize: 18 }}> Humidity:</span> {currentWeather.humidity}%
+                            </p>
+                            <p>
+                                <span style={{ fontWeight: "bold", fontSize: 18 }}>Wind Direction:</span> {currentWeather.windDirection}°
+                            </p>
                         </article>
                     )
                 }
@@ -44,7 +48,6 @@ const CurrentWeatherCard = () => {
                         Airport Weather (fmi)
                     </a>
                 </article>
-
             </div>
         </section>
     );
