@@ -41,11 +41,20 @@ const ForecastTable = () => {
 		}
 	];
 
+	const conditionalDateStyle = [{
+		when: row => new Date(row.time).getDay() === new Date().getDay(),
+		style: {
+			backgroundColor: 'black',
+			color: 'white',
+		},
+	}];
+
 	return (
 		<DataTable
 			columns={columns}
 			data={forecastData}
 			responsive={true}
+			conditionalRowStyles={conditionalDateStyle}
 		/>
 	);
 
