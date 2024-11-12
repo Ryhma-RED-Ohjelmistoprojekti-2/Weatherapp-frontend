@@ -62,7 +62,7 @@ WindroseChart.jsx
 
 - Windrose Chart for showing wind direction history.
 
-Main Charts:
+Main Cards:
 
 CurrentWeatherCard.jsx
 
