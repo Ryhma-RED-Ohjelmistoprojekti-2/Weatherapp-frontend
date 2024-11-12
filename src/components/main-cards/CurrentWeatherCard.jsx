@@ -16,21 +16,22 @@ const CurrentWeatherCard = () => {
                 <h2>Current Weather</h2>
             </div>
             <div className="weathercard-content">
-                {loadingWeather ? (
-                    <p>Loading data...</p>
-                ) : (
-                    <article className="weathercard-content-info">
-                        <p>Weather measured {measurementTimeString} {measurementDateString}</p>
-                        <p>
-                            Temperature: {currentWeather.temperature}°,
-                            Humidity: {currentWeather.humidity}%
-                        </p>
-                        <p>Wind Direction: {currentWeather.windDirection}°</p>
-                        {weatherError && (
-                            <p style={{ color: "red" }}>Error: {weatherError} (showing test data)</p>
-                        )}
-                    </article>
-                )}
+                {
+                    loadingWeather ? (
+                        <p>Loading data...</p>
+                    ) : weatherError ? (
+                        <p style={{ color: 'red' }}>Error: {weatherError}</p>
+                    ) : (
+                        <article className="weathercard-content-info">
+                            <p>Weather measured {measurementTimeString} {measurementDateString}</p>
+                            <p>
+                                Temperature: {currentWeather.temperature}°,
+                                Humidity: {currentWeather.humidity}%
+                            </p>
+                            <p>Wind Direction: {currentWeather.windDirection}°</p>
+                        </article>
+                    )
+                }
 
                 <AirportCard />
 
