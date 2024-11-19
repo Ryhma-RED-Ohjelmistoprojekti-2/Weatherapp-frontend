@@ -88,7 +88,7 @@ const AirportChart = () => {
                 />
 
                 <img
-                    src="..\assets\Windbag.svg"
+                    src="..\..\assets\Windbag.svg"
                     points={[directionX1, directionY1, directionX2, directionY2]}
                 />
 
