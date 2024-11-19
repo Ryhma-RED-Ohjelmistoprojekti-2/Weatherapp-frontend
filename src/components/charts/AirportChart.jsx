@@ -87,12 +87,10 @@ const AirportChart = () => {
                     fill="black"
                 />
 
+
+
                 <Arrow
                     points={[directionX1, directionY1, directionX2, directionY2]}
-                    //TODO: add and deploy new windbag vector image to wind direction
-                    // and erase arrow one
-
-                    //img src= src/assets/Windbag.svg
                     stroke="maroon"
                     strokeWidth={9}
                 />
