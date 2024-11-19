@@ -7,4 +7,4 @@
 //export const dbUrl = "https://softala.haaga-helia.fi:8084";
 
 //Note the API url is
-export const dbUrl = "http://softala.haaga-helia.fi:8084/api/weathers" 
+export const dbUrl = "https://softala.haaga-helia.fi:8084/api/weathers" 
