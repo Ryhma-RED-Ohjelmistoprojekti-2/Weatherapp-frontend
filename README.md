@@ -15,7 +15,7 @@ React Data Table Component
 
 React Konva Library
 - https://konvajs.org/ 
-- Used in this project to draw airport runways and wind direction arrow.
+- Used in this project to draw airport runways as well as windbag and arrow showing current wind direction.
 
 Recharts Library
 - https://recharts.org/en-US/ 
