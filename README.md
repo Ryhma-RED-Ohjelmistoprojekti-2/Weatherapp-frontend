@@ -27,7 +27,7 @@ Windrose Chart Component
 
 Public APIs currently in use:
 
-Norwegian Meteorological Institute "Tafmetar 1.0" api to get metars for 3 airports
+Norwegian Meteorological Institute "Tafmetar 1.0" api to get metars for 3 airports.
 
 - https://api.met.no/weatherapi/tafmetar/1.0/documentation
 
@@ -37,7 +37,7 @@ Norwegian Meteorological Institute "Tafmetar 1.0" api to get metars for 3 airpor
   EFTU: Turku Airport (Finland), 
   EFTP: Tampere-Pirkkala Airport (Finland)
 
-Norwegian Meteorological Institute "Locationforecast 2.0" api to get hourly forecasts for a specified place
+Norwegian Meteorological Institute "Locationforecast 2.0" api to get hourly forecasts for a specified place.
 
 - https://api.met.no/weatherapi/locationforecast/2.0/documentation
 
@@ -48,7 +48,7 @@ Charts:
 AirportChart.jsx
 
 - Draws a visual representation of given airport runways and their angles.
-- Draws visual arrow showing wind direction.
+- Draws visual arrow and windbag showing wind direction.
 
 ForecastTable.jsx:
 
@@ -66,7 +66,7 @@ Main Cards:
 
 CurrentWeatherCard.jsx
 
-- Card component showing latest weather measurement information. Also works as a layout housing AirportCard.jsx and METARCard.jsx card components.
+- Card component showing latest weather measurement information. Also works as the layout housing AirportCard.jsx and METARCard.jsx card components.
 
 ForecastCard.jsx
 
@@ -74,7 +74,7 @@ ForecastCard.jsx
 
 HistoryCard.jsx
 
-- Card component that provides the layout for WeatherhistoryChart.jsx and WindroseChart.jsx components.
+- Card component that provides the layout for WeatherHistoryChart.jsx and WindroseChart.jsx components.
 
 Sub Cards:
 
@@ -85,3 +85,22 @@ AirportCard.jsx
 METARCard.jsx
 
 - Card component displaying latest METARS.
+
+Environment Variables:
+
+VITE_ANGLES
+
+- Sets the runway angle(s) based on which AirportChart.jsx draws the visual representation of the runway(s) for an airport.
+- Example format: 04/22,12/30
+
+VITE_TITLE
+
+- Sets the header text for the application.
+
+VITE_LOCATION_LATITUDE
+
+- Sets the latitude of the location for the weather forecast in ForecastTable.jsx.
+
+VITE_LOCATION_LONGITUDE
+
+- Sets the longitude of the location for the weather forecast in ForecastTable.jsx.
