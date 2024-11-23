@@ -1,10 +1,27 @@
-import { Stage, Layer, Line, Text, Ring, Arrow } from 'react-konva';
+import { Stage, Layer, Line, Text, Ring, Arrow, Image } from 'react-konva';
 import React from 'react';
 import { useWeather } from '../../hooks/useWeather';
+import windbagSVG from "../../assets/WindBag.svg"
+import { useState, useEffect } from 'react';
 
 const AirportChart = () => {
 
     const { currentWeather } = useWeather();
+
+    /*     this following code is for the windbag image
+        the windbag image has to be created and loaded properly before it can be used
+        just using the reference to image path is not enough.
+        
+        state for re-rendering once image is loaded */
+
+    const [windbagImage, setWindbagImage] = useState(null);
+
+    useEffect(() => {
+        //window.image has to be used because 'Image' keyword is taken by the konva import
+        const windbag = new window.Image();
+        windbag.src = windbagSVG;
+        windbag.onload = () => setWindbagImage(windbag);
+    }, []);
 
     //this code defines the center of the coordinate grid
     const centeredXCoordinate = 155;
@@ -79,20 +96,24 @@ const AirportChart = () => {
                 }
 
                 <Text
-                    x={centeredXCoordinate - 35}
+                    x={centeredXCoordinate - 150}
                     y={centeredYCoordinate - 20}
                     text={`${currentWeather.windDirection}°`}
-                    fontSize={40}
+                    fontSize={25}
                     fontStyle='bold'
                     fill="black"
                 />
 
-                <img
-                    src="..\..\assets\Windbag.svg"
-                    points={[directionX1, directionY1, directionX2, directionY2]}
+                <Image
+                    x={centeredXCoordinate}
+                    y={centeredYCoordinate}
+                    width={75}
+                    height={50}
+                    image={windbagImage}
+                    rotation={-currentWeather.windDirection}
+                    offsetX={0}
+                    offsetY={25}
                 />
-
-
 
                 <Arrow
                     points={[directionX1, directionY1, directionX2, directionY2]}
