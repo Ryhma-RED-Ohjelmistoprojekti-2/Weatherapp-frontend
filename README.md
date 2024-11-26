@@ -16,7 +16,7 @@ Oskari Aho
 
 Kaj Jansson
 - E-mail: kaj.jansson@myy.haaga-helia.fi
-- Github account:
+- Github account: https://github.com/KajFromHH
 
 Johannes Haapanen
 - E-mail:
