@@ -75,9 +75,9 @@ Norwegian Meteorological Institute "Locationforecast 2.0" api to get hourly fore
 
 - https://api.met.no/weatherapi/locationforecast/2.0/documentation
 
-## 4. Descriptions of each components (Javascripts)
+## 4. Descriptions of each components (Javascripts & Enviroment variables)
 
-Charts:
+**Charts**
 
 AirportChart.jsx
 
@@ -96,7 +96,7 @@ WindroseChart.jsx
 
 - Windrose Chart for showing wind direction history.
 
-Main Cards:
+**Main Cards**:
 
 CurrentWeatherCard.jsx
 
@@ -110,7 +110,7 @@ HistoryCard.jsx
 
 - Card component that provides the layout for WeatherHistoryChart.jsx and WindroseChart.jsx components.
 
-Sub Cards:
+**Sub Cards**:
 
 AirportCard.jsx
 
@@ -120,7 +120,7 @@ METARCard.jsx
 
 - Card component displaying latest METARS.
 
-Environment Variables:
+**Environment Variables**:
 
 VITE_ANGLES
 
