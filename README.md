@@ -2,25 +2,31 @@
 
 Members of the team:
 
-* Erkki Tiili
+Erkki Tiili
 - Email:
 - Github account:
-*  Ilari Koikkalainen
+
+Ilari Koikkalainen
 - Email:
 - Github account:
-*Oskari Aho
+
+Oskari Aho
 - Email:
 - Github account:
-* Kaj Jansson
+
+Kaj Jansson
 - Email: kaj.jansson@myy.haaga-helia.fi
 - Github account:
-* Johannes Haapanen
+
+Johannes Haapanen
 - Email:
 - Github account:
-* Joel Borenius
+
+Joel Borenius
 - Email:
 - Github account:
-* Rasmus Haapalainen
+
+Rasmus Haapalainen
 - Email:
 - Github account:
 
