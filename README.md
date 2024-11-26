@@ -96,7 +96,7 @@ WindroseChart.jsx
 
 - Windrose Chart for showing wind direction history.
 
-**Main Cards**:
+<ins>**Main Cards**</ins>:
 
 CurrentWeatherCard.jsx
 
@@ -110,7 +110,7 @@ HistoryCard.jsx
 
 - Card component that provides the layout for WeatherHistoryChart.jsx and WindroseChart.jsx components.
 
-**Sub Cards**:
+<ins>**Sub Cards**</ins>:
 
 AirportCard.jsx
 
@@ -120,7 +120,7 @@ METARCard.jsx
 
 - Card component displaying latest METARS.
 
-**Environment Variables**:
+<ins>**Environment Variables**</ins>:
 
 VITE_ANGLES
 
