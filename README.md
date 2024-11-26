@@ -2,16 +2,27 @@
 
 Members of the team:
 
-Erkki Tiili
+* Erkki Tiili
 - Email:
 - Github account:
-Ilari Koikkalainen
-Oskari Aho
-Kaj Jansson
-Johannes Haapanen
-Joel Borenius
-Rasmus Haapalainen
-
+*  Ilari Koikkalainen
+- Email:
+- Github account:
+*Oskari Aho
+- Email:
+- Github account:
+* Kaj Jansson
+- Email: kaj.jansson@myy.haaga-helia.fi
+- Github account:
+* Johannes Haapanen
+- Email:
+- Github account:
+* Joel Borenius
+- Email:
+- Github account:
+* Rasmus Haapalainen
+- Email:
+- Github account:
 
 Frontend for displaying weather measurements and data built using React and Javascript.
 
