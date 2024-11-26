@@ -1,6 +1,6 @@
 # WeatherApp frontend
 
-Members of the team:
+## 1. Members of the team:
 
 Erkki Tiili
 - E-mail:
@@ -30,11 +30,15 @@ Rasmus Haapalainen
 - E-mail:
 - Github account:
 
-Frontend for displaying weather measurements and data built using React and Javascript.
+## 2. Introduction
+
+This is a frontend for displaying weather measurements and data built using React and Javascript.
 
 This project is deployed on Github Pages:
 
 https://ryhma-red-ohjelmistoprojekti-2.github.io/s24RyhmaREDfrontend/
+
+## 3. Third party components and libraries
 
 Third party components and libraries used in this project:
 
