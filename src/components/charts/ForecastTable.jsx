@@ -27,12 +27,12 @@ const ForecastTable = () => {
 		{
 			name: "Time",
 			selector: (row) => formatDate(row),
-			width: "135px",
+			width: "145px",
 		},
 		{
 			name: "Temp",
 			selector: (row) => row.data.instant.details.air_temperature + "°C",
-			width: "65px"
+			width: "75px"
 		},
 		{
 			name: "Wind",
