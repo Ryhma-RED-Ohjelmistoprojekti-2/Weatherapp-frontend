@@ -138,3 +138,10 @@ VITE_LOCATION_LATITUDE
 VITE_LOCATION_LONGITUDE
 
 - Sets the longitude of the location for the weather forecast in ForecastTable.jsx.
+
+## 4. Additional info about frontend
+For more additional info about frontend can be read via following links:
+
+a) https://github.com/Ryhma-RED-Ohjelmistoprojekti-2/Weatherapp-documents/blob/d51a03c526b987cb1740cf9b24a8509a2c512024/Frontend-Weatherapp-Components.md
+
+b) https://github.com/Ryhma-RED-Ohjelmistoprojekti-2/Weatherapp-documents/blob/d51a03c526b987cb1740cf9b24a8509a2c512024/Manual-for-frontend.md
