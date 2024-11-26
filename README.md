@@ -77,7 +77,7 @@ Norwegian Meteorological Institute "Locationforecast 2.0" api to get hourly fore
 
 ## 4. Descriptions of each components (Javascripts & Enviroment variables)
 
-**Charts**
+<ins>**Charts**</ins>
 
 AirportChart.jsx
 
