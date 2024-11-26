@@ -1,5 +1,18 @@
 # WeatherApp frontend
 
+Members of the team:
+
+Erkki Tiili
+- Email:
+- Github account:
+Ilari Koikkalainen
+Oskari Aho
+Kaj Jansson
+Johannes Haapanen
+Joel Borenius
+Rasmus Haapalainen
+
+
 Frontend for displaying weather measurements and data built using React and Javascript.
 
 This project is deployed on Github Pages:
