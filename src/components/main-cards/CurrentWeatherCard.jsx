@@ -20,7 +20,7 @@ const CurrentWeatherCard = () => {
                     loadingWeather ? (
                         <p>Loading data...</p>
                     ) : weatherError ? (
-                        <p style={{ color: 'red' }}>Error: {weatherError}</p>
+                        <p style={{ color: 'black' }}>Error: {weatherError}</p>
                     ) : (
                         <article className="weathercard-content-info">
                             <p>

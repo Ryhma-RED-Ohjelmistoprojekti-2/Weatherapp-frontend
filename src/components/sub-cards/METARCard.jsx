@@ -14,7 +14,7 @@ const METARCard = () => {
                     loadingMetars ? (
                         <p>Loading METAR data...</p>
                     ) : metarError ? (
-                        <p style={{ color: 'red' }}>Error: {metarError}</p>
+                        <p style={{ color: 'black' }}>Error: {metarError}</p>
                     ) : (
                         <>
                             {metars.map((metar, index) => <p key={index}>{metar}</p>)}

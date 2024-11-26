@@ -15,7 +15,7 @@ const ForecastCard = () => {
                     loadingForecast ? (
                         <p>Loading forecast...</p>
                     ) : forecastError ? (
-                        <p style={{ color: 'red' }}>Error: {forecastError}</p>
+                        <p style={{ color: 'black' }}>Error: {forecastError}</p>
                     ) : (
                         <ForecastTable />
                     )
