@@ -34,6 +34,8 @@ Rasmus Haapalainen
 
 This is a frontend for displaying weather measurements and data built using React and Javascript.
 
+Project deployment url: https://ryhma-red-ohjelmistoprojekti-2.github.io/Weatherapp-frontend/
+
 ![image](https://github.com/user-attachments/assets/38afb3c7-2a57-49c2-95a5-c703fc4cd204)
 
 Picture 01: The visual UI of weatherapp. [KAJ -> TODO: ADD UPDATED IMAGE OF WEATHERAPP]
