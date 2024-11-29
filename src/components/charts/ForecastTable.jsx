@@ -27,7 +27,7 @@ const ForecastTable = () => {
 		{
 			name: "Time",
 			selector: (row) => formatDate(row),
-			width: "145px",
+			width: "135px",
 		},
 		{
 			name: "Temp",
