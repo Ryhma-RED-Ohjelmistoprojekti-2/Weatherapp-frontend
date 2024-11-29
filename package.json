@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Ryhma-RED-Ohjelmistoprojekti-2.github.io/s24RyhmaREDfrontend/",
+  "homepage": "https://Ryhma-RED-Ohjelmistoprojekti-2.github.io/Weatherapp-frontend/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
