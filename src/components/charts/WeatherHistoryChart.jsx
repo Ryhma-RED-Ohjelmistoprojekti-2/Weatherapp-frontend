@@ -8,7 +8,7 @@ export default function WeatherHistoryChart() {
     time: `${time.slice(0, 2)}${time.slice(2, 5)}:${time.slice(6, 8)}`,
     speed: avgWindSpeed,
     direction: windDirection,
-    windGust: windDirection + (Math.random() * 60 - 30), //TODO: real windGust
+    windGust: windDirection + 0, //TODO: real windGust
   }));
 
   return (
