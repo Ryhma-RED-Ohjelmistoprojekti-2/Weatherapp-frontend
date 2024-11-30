@@ -7,7 +7,6 @@ class ErrorBoundary extends Component {
     }
 
     static getDerivedStateFromError(error) {
-
         return { hasError: true };
     }
 
@@ -19,22 +18,22 @@ class ErrorBoundary extends Component {
     render() {
         if (this.state.hasError) {
             return (
-            <div style={{
-                display: 'flex',
-                flexDirection: 'column', 
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '100vh',
-                textAlign: 'center'
-            }}>
-                <h2>Something went wrong😞</h2>
-                {/* TODO: Yksityiskohdat pois? */}
-                <details style={{ whiteSpace: 'pre-wrap' }}>
-                {this.state.error && this.state.error.toString()}
-                <br />
-                {this.state.errorInfo && this.state.errorInfo.componentStack}
-                </details>
-            </div>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column', 
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100vh',
+                    textAlign: 'center',
+                    backgroundColor: '#f8f8f8' 
+                }}>
+                    <h2 style={{ color: 'white' }}>Something went wrong 😞</h2>
+                    <details style={{ color: 'white', whiteSpace: 'pre-wrap' }}>
+                        {this.state.error && this.state.error.toString()}
+                        <br />
+                        {this.state.errorInfo && this.state.errorInfo.componentStack}
+                    </details>
+                </div>
             );
         }
         return this.props.children;
