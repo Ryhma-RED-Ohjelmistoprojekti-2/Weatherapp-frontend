@@ -4,7 +4,7 @@ import { useWeather } from "../../hooks/useWeather";
 export default function WeatherHistoryChart() {
   const { weatherData } = useWeather();
 
-  const data = weatherData.slice(-10).map(({ time, avgWindSpeed, windDirection }) => ({
+  const data = weatherData.slice(0, 10).map(({ time, avgWindSpeed, windDirection }) => ({
     time: `${time.slice(0, 2)}${time.slice(2, 5)}:${time.slice(6, 8)}`,
     speed: avgWindSpeed,
     direction: windDirection,

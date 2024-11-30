@@ -29,7 +29,7 @@ export const WeatherProvider = ({ children }) => {
         const response = await fetch(`${dbUrl}/api/weathers`);
         if (!response.ok) throw new Error("Issue fetching weather data!");
         const responseData = await response.json();
-        setCurrentWeather(responseData[responseData.length - 1]);
+        setCurrentWeather(responseData[0]);
         setWeatherData(responseData);
       } catch (error) {
         setWeatherError(error.message);
