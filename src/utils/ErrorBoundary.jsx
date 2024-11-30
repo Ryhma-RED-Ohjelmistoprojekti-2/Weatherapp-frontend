@@ -27,8 +27,8 @@ class ErrorBoundary extends Component {
                     textAlign: 'center',
                     backgroundColor: '#f8f8f8' 
                 }}>
-                    <h2 style={{ color: 'white' }}>Something went wrong 😞</h2>
-                    <details style={{ color: 'white', whiteSpace: 'pre-wrap' }}>
+                    <h2 style={{ color: 'black' }}>Something went wrong 😞</h2>
+                    <details style={{ color: 'black', whiteSpace: 'pre-wrap' }}>
                         {this.state.error && this.state.error.toString()}
                         <br />
                         {this.state.errorInfo && this.state.errorInfo.componentStack}
