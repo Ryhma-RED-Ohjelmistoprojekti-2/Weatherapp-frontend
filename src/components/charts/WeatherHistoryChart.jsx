@@ -5,7 +5,7 @@ export default function WeatherHistoryChart() {
   const { weatherData } = useWeather();
 
   const data = weatherData.slice(-10).reverse().map(({ time, avgWindSpeed, windDirection }) => ({
-    time: `${time.slice(0, 2)}${time.slice(2, 5)}:${time.slice(6, 8)}`,
+    time: `${time?.slice(0, 2)}${time?.slice(2, 5)}:${time?.slice(6, 8)}` || "",
     speed: avgWindSpeed,
     direction: windDirection,
     windGust: windDirection + 0, //TODO: real windGust
