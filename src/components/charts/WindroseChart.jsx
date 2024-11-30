@@ -6,10 +6,10 @@ const WindroseChart = () => {
     const { weatherData } = useWeather();
 
     const rawData = {
-        direction: weatherData.slice(0, 10).map(data => data.windDirection),
+        direction: weatherData.slice(-10).reverse().map(data => data.windDirection),
         // Wind directions in degrees
 
-        speed: weatherData.slice(0, 10).map(data => data.avgWindSpeed)
+        speed: weatherData.slice(-10).reverse().map(data => data.avgWindSpeed)
         // wind speeds in m/s
     };
 
