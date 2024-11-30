@@ -3,8 +3,8 @@
 ## 1. Members of the team:
 
 Erkki Tiili
-- E-mail:
-- Github account:
+- E-mail: erkki.tiili@myy.haaga-helia.fi
+- Github account: https://github.com/Textiili
 
 Ilari Koikkalainen
 - E-mail:
