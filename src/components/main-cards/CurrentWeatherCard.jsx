@@ -7,8 +7,9 @@ const CurrentWeatherCard = () => {
 
     const { currentWeather, loadingWeather, weatherError } = useWeather();
 
-    const measurementTimeString = `${currentWeather.time.slice(0, 2)}.${currentWeather.time.slice(2, 4)}`;
-    const measurementDateString = `${currentWeather.date.slice(6, currentWeather.date.length)}.${currentWeather.date.slice(5, 6)}`;
+    const measurementTimeString = `${currentWeather.time.slice(0, 2)}${currentWeather.time.slice(2, 5)}`;
+    const measurementDateString = `${currentWeather.date.slice(8, 10)}.${currentWeather.date.slice(5, 7)}`;
+
 
     return (
         <section className="weathercard">

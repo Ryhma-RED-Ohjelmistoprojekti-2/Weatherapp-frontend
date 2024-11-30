@@ -5,10 +5,10 @@ export default function WeatherHistoryChart() {
   const { weatherData } = useWeather();
 
   const data = weatherData.slice(-10).map(({ time, avgWindSpeed, windDirection }) => ({
-    time: `${time.slice(0, 2)}:${time.slice(2, 4)}:${time.slice(4, 6)}`,
+    time: `${time.slice(0, 2)}${time.slice(2, 5)}:${time.slice(6, 8)}`,
     speed: avgWindSpeed,
     direction: windDirection,
-    windGust: windDirection - 50, //ei ole windGustia erikseen niin jotain näkyviin väliaikaisesti
+    windGust: windDirection + (Math.random() * 60 - 30), //TODO: real windGust
   }));
 
   return (
