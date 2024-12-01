@@ -23,8 +23,8 @@ Johannes Haapanen
 - Github account:
 
 Joel Borenius
-- E-mail:
-- Github account:
+- E-mail: joel.borenius@myy.haaga-helia.fi
+- Github account: Joeliciousb
 
 Rasmus Haapalainen
 - E-mail:
