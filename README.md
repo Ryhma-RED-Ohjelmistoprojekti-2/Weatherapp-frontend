@@ -19,8 +19,8 @@ Kaj Jansson
 - Github account: https://github.com/KajFromHH
 
 Johannes Haapanen
-- E-mail:
-- Github account:
+- E-mail: johannes.haapanen(at)myy.haaga-helia.fi
+- Github account: https://github.com/joakha
 
 Joel Borenius
 - E-mail: joel.borenius@myy.haaga-helia.fi
