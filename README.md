@@ -141,7 +141,32 @@ VITE_LOCATION_LONGITUDE
 
 - Sets the longitude of the location for the weather forecast in ForecastTable.jsx.
 
-## 5. Additional info about frontend
+## 5. Instructions for coding frontend locally.
+
+A) Fork the whole project to your Github account. Rename the repository.
+
+B) Use terminal that copys the project locally to your host machine.
+
+Our group used e.g. Git Bash with command 
+  git clone [INSERT HTTPS-URL OF GITHUB REPOSITORY FOR FRONTEND]
+
+C) Go to frontend's directory in your host machine. Execute following command in order to
+install essential libraries and tools in the terminal (e.g. PowerShell or Terminal in Windows):
+  npm install
+
+D) Open the code project easily with command
+  code .
+
+E) Run the frontend locally via command
+  npm run dev
+
+TODO! FIX THE BELLOW SENTENCE!
+Note, that you must change values in the src > constants > _constant.js_ file in following variables
+  export const dbUrl = "http://softala.haaga-helia.fi:8084/api/weathers"  -> export const dbUrl = "http://localhost:8080"
+
+F) If you want deploy the project 
+
+## 6. Additional info about frontend
 For more additional info about frontend can be read via following links:
 
 a) https://github.com/Ryhma-RED-Ohjelmistoprojekti-2/Weatherapp-documents/blob/d51a03c526b987cb1740cf9b24a8509a2c512024/Frontend-Weatherapp-Components.md
