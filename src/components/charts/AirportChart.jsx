@@ -110,7 +110,7 @@ const AirportChart = () => {
                     width={75}
                     height={50}
                     image={windbagImage}
-                    rotation={-currentWeather.windDirection}
+                    rotation={-currentWeather.windDirection - 180}
                     offsetX={0}
                     offsetY={25}
                 />
